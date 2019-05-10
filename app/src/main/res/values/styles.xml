@@ -85,7 +85,7 @@
 
     <style name="GothamTextViewStyle"
         parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/gotham_regular</item>
+        <item name="android:fontFamily">@font/Questrial</item>
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
