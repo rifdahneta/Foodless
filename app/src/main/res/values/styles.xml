@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -6,6 +6,105 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/GothamTextViewStyle</item>
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+        <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
+        <item name="android:windowExitTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
+    </style>
+
+    <style name="SetToolbar"
+        parent="AppTheme">
+        <item name="android:background">@color/formBackground</item>
+        <item name="android:textColorPrimary">@color/putih</item>
+        <item name="colorControlNormal">@color/putih</item>
+    </style>
+
+    <style name="FormLayout" parent="AppTheme">
+        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+        <item name="android:radioButtonStyle">@style/MyRadioButton</item>
+        <item name="android:colorBackground">@color/formBackground</item>
+        <item name="android:textColor">@color/putih</item>
+        <item name="android:textColorHighlight">@color/putih</item>
+        <item name="colorButtonNormal">@color/formBackground</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:textColorHint">@color/putihHint</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/putih</item>
+        <item name="editTextStyle">@style/formEdtStyle</item>
+        <item name="textInputStyle">@style/Widget.AppTheme.TextInputLayoutList</item>
+        <item name="buttonTint">@color/putih</item>
+        <item name="android:checkboxStyle">@style/MyCheckBoxStyle</item>
+    </style>
+
+
+    <style name="Widget.AppTheme.TextInputLayoutList" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.HintTextAlt</item>
+        <item name="boxStrokeColor">@color/form_box_input_color</item>
+        <item name="boxCornerRadiusBottomEnd">5dp</item>
+        <item name="boxCornerRadiusBottomStart">5dp</item>
+        <item name="boxCornerRadiusTopEnd">5dp</item>
+        <item name="boxCornerRadiusTopStart">5dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="android:textColor">@color/putih</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.TextInputLayout.HintTextAlt"
+        parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">@color/putih</item>
+    </style>
+
+    <style name="formEdtStyle"
+        parent="android:Widget.EditText">
+        <item name="android:padding">10dp</item>
+
+    </style>
+
+
+    <style name="MyRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:buttonTint" tools:targetApi="lollipop">@color/putih</item>
+        <item name="buttonTint">@color/putih</item>
+        <item name="android:textColor">@color/putih</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+
+    <style name="MyCheckBoxStyle"
+        parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/putih</item>
+        <item name="buttonTint">@color/putih</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="SpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/formBackground</item>
+    </style>
+
+
+    <style name="GothamTextViewStyle"
+        parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/gotham_regular</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/putih</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="android:textColor">@color/hitam</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/hitam</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/hitam</item>
     </style>
 
 </resources>
