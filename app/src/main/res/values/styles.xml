@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textViewStyle">@style/GothamTextViewStyle</item>
+        <item name="android:textViewStyle">@style/QuestrialTextViewStyle</item>
         <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
         <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
         <item name="android:windowExitTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
@@ -27,7 +27,7 @@
         <item name="android:textColorHighlight">@color/putih</item>
         <item name="colorButtonNormal">@color/formBackground</item>
         <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
-        <item name="android:textColorHint">@color/putihHint</item>
+        <item name="android:textColorHint">@color/bgcolor</item>
         <item name="android:textColorPrimaryDisableOnly">@color/putih</item>
         <item name="editTextStyle">@style/formEdtStyle</item>
         <item name="textInputStyle">@style/Widget.AppTheme.TextInputLayoutList</item>
@@ -45,13 +45,13 @@
         <item name="boxCornerRadiusTopStart">5dp</item>
         <item name="android:layout_margin">10dp</item>
         <item name="boxStrokeWidth">2dp</item>
-        <item name="android:textColor">@color/putih</item>
+        <item name="android:textColor">@color/bgcolor</item>
         <item name="android:textSize">11sp</item>
     </style>
 
     <style name="TextAppearance.AppTheme.TextInputLayout.HintTextAlt"
         parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="android:textColor">@color/putih</item>
+        <item name="android:textColor">@color/bgcolor</item>
     </style>
 
     <style name="formEdtStyle"
@@ -83,9 +83,9 @@
     </style>
 
 
-    <style name="GothamTextViewStyle"
+    <style name="QuestrialTextViewStyle"
         parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/Questrial</item>
+        <item name="android:fontFamily">@font/questrial</item>
     </style>
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -107,4 +107,8 @@
         <item name="android:textColor">@color/hitam</item>
     </style>
 
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#fff</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
 </resources>
