@@ -4,5 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.MainActivity">
+    tools:context=".Activity.Register"
+    android:theme="@style/FormLayout"
+    android:background="@color/putih">
+
+
+
+
 </android.support.constraint.ConstraintLayout>

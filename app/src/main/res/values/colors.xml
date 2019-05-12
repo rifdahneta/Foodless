@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="bgcolor">#006f3c</color>
+
+    <color name="Abu">#b7b7b7</color>
+    <color name="putih">#ffffff</color>
+    <color name="hitam">#000</color>
+    <color name="formBackground">#4EA66D</color>
+    <color name="putihHint">#4DFFFFFF</color>
+    <color name="putihNormal">#A6FFFFFF</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color" tools:override = "true">#006f3c</color>
+    <color name="mtrl_textinput_disabled_color" tools:override = "true">#99000000</color>
 </resources>
