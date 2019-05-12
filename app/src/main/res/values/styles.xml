@@ -1,5 +1,21 @@
-<resource>
-    <style>
+<resources>
 
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/QuestrialViewStyle</item>
+        <item name="buttonStyle">@style/QuestrialButtonStyle</item>
     </style>
-</resource>
+
+    <style name="QuestrialViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/Questrial</item>
+    </style>
+
+    <style name="QuestrialButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/Questrial</item>
+    </style>
+
+</resources>
