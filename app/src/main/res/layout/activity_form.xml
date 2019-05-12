@@ -101,14 +101,14 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
-            android:hint="@string/nama">
+            android:hint="Email">
 
             <EditText
-
+                android:id="@+id/formEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/questrial"
-                android:inputType="phone"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/Abu"
                 android:textColorHint="@color/formBackground" />
 
@@ -120,14 +120,14 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
-            android:hint="@string/nama">
+            android:hint="Jenis Makanan">
 
             <EditText
-
+                android:id="@+id/formJenisMakanan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/questrial"
-                android:inputType="phone"
+                android:inputType="text"
                 android:textColor="@color/Abu"
                 android:textColorHint="@color/formBackground" />
 
@@ -139,19 +139,36 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
-            android:hint="@string/nama">
+            android:hint="Tanggal Kadaluarsa">
 
             <EditText
-
+                android:id="@+id/formKadaluarsa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/questrial"
-                android:inputType="phone"
+                android:inputType="date"
                 android:textColor="@color/Abu"
                 android:textColorHint="@color/formBackground" />
 
         </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Jumlah Porsi">
 
+            <EditText
+                android:id="@+id/formPorsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/questrial"
+                android:inputType="number"
+                android:textColor="@color/Abu"
+                android:textColorHint="@color/formBackground" />
+
+        </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
