@@ -8,7 +8,4 @@
     android:theme="@style/FormLayout"
     android:background="@color/putih">
 
-
-
-
 </android.support.constraint.ConstraintLayout>
