@@ -11,5 +11,10 @@
     <string name="choose_regis">Choose <b>One</b></string>
     <string name="login">Login</string>
     <string name="text_register">Dont have an account? Register <u> here</u> </string>
+    <string name="nama">Nama Individu/Event</string>
+    <string name="event">Event</string>
+    <string name="individu">Individu</string>
+    <string name="telepon">Telepon</string>
+    <string name="exindividu">Ex: Janu, RM Padang</string>
 
 </resources>
