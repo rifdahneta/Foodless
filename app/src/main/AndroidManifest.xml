@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.Register"></activity>
+        <activity android:name=".Activity.Login"></activity>
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.Login">
+        <activity android:name=".Activity.Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
