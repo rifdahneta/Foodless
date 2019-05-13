@@ -4,18 +4,18 @@
 
     <item
         android:id="@+id/btnHome"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Home" />
+        android:icon="@drawable/buttonhome"
+        android:title="@string/home" />
     <item
         android:id="@+id/btnfoodfact"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Food Fact" />
+        android:icon="@drawable/foodfact"
+        android:title="@string/food_fact" />
     <item
         android:id="@+id/btnhistory"
-        android:icon="@mipmap/ic_launcher"
-        android:title="History" />
+        android:icon="@drawable/buttonhistory"
+        android:title="@string/history" />
     <item
         android:id="@+id/btnfprofile"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Profile" />
+        android:icon="@drawable/buttonprofile"
+        android:title="@string/profile" />
 </menu>
