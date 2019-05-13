@@ -44,7 +44,7 @@
                 android:textColor="@color/hijau"
                 android:text="JUDUL BERITA"
                 android:textSize="20sp"
-                android:fontFamily="@font/Questrial"
+                android:fontFamily="@font/questrial"
                 android:textStyle="bold"
                 android:lines="2"
                 android:ellipsize="end"

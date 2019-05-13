@@ -11,11 +11,11 @@
     </style>
 
     <style name="QuestrialViewStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/Questrial</item>
+        <item name="android:fontFamily">@font/questrial</item>
     </style>
 
     <style name="QuestrialButtonStyle" parent="android:Widget.Holo.Button">
-        <item name="android:fontFamily">@font/Questrial</item>
+        <item name="android:fontFamily">@font/questrial</item>
     </style>
 
 </resources>
