@@ -63,7 +63,7 @@
 
     <style name="MyRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:buttonTint" tools:targetApi="lollipop">@color/putih</item>
-        <item name="buttonTint">@color/putih</item>
+        <item name="buttonTint">@color/bgcolor</item>
         <item name="android:textColor">@color/putih</item>
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
