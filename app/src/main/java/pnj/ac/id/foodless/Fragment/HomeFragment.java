@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
+import pnj.ac.id.foodless.R;
 
 public class HomeFragment extends Fragment {
 

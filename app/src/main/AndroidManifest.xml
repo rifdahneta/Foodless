@@ -15,14 +15,13 @@
 
         <activity android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".Activity.SplashScreen"
+        <activity android:name=".Activity.Register"
             tools:ignore="InnerclassSeparator" />
-        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".Activity.Login"
             tools:ignore="InnerclassSeparator" />
         <activity android:name=".Activity.Form"
             tools:ignore="InnerclassSeparator"/>
-        <activity android:name=".Activity.Register"
+        <activity android:name=".Activity.SplashScreen"
             tools:ignore="InnerclassSeparator">
 
             <intent-filter>

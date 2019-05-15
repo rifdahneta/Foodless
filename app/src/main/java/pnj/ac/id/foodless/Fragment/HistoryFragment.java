@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import pnj.ac.id.foodless.R;
 
 
 public class HistoryFragment extends Fragment {
