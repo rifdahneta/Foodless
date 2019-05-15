@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="pnj.ac.id.foodless2">
+    package="pnj.ac.id.foodless">
+
 
     <application
         android:allowBackup="true"
@@ -10,15 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity"> </activity>
-        <activity android:name=".SplashScreen">
+        tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
+
+        <activity android:name=".Activity.MainActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".Activity.SplashScreen"
+            tools:ignore="InnerclassSeparator" />
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Activity.Login"
+            tools:ignore="InnerclassSeparator" />
+        <activity android:name=".Activity.Register"
+            tools:ignore="InnerclassSeparator">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".Activity.Form"
+            tools:ignore="InnerclassSeparator" />
+
     </application>
 
 </manifest>

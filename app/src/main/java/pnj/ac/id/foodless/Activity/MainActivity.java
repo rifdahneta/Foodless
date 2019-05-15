@@ -1,9 +1,8 @@
-package pnj.ac.id.foodless2;
+package pnj.ac.id.foodless.Activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +13,7 @@ import pnj.ac.id.foodless.Fragment.FoodfactFragment;
 import pnj.ac.id.foodless.Fragment.HistoryFragment;
 import pnj.ac.id.foodless.Fragment.HomeFragment;
 import pnj.ac.id.foodless.Fragment.ProfileFragment;
+import pnj.ac.id.foodless.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,3 +75,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+

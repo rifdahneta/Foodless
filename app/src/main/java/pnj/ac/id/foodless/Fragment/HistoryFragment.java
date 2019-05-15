@@ -1,4 +1,4 @@
-package pnj.ac.id.foodless2;
+package pnj.ac.id.foodless.Fragment;
 
 import android.content.Context;
 import android.net.Uri;
