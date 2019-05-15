@@ -1,4 +1,4 @@
-package pnj.ac.id.foodless2.Model;
+package pnj.ac.id.foodless.Model;
 
 public class Berita {
     private String judulBerita;

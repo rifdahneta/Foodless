@@ -1,4 +1,4 @@
-package pnj.ac.id.foodless2.Adpater;
+package pnj.ac.id.foodless.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -13,8 +13,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import pnj.ac.id.foodless2.Model.Berita;
-import pnj.ac.id.foodless2.R;
+import pnj.ac.id.foodless.Model.Berita;
+import pnj.ac.id.foodless.R;
 
 public class CardBeritaAdapter extends RecyclerView.Adapter<CardBeritaAdapter.CardViewViewHolder> {
 
