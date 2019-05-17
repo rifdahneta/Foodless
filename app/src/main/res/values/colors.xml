@@ -16,4 +16,3 @@
     <color name="mtrl_textinput_default_box_stroke_color" tools:override = "true">#006f3c</color>
     <color name="mtrl_textinput_disabled_color" tools:override = "true">#99000000</color>
 </resources>
-gi

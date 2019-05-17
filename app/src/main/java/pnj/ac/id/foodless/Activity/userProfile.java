@@ -1,7 +1,9 @@
-package pnj.ac.id.foodless;
+package pnj.ac.id.foodless.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import pnj.ac.id.foodless.R;
 
 public class userProfile extends AppCompatActivity {
 
