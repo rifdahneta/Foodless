@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="supersmall">8sp</dimen>
+    <dimen name="small">9sp</dimen>
+    <dimen name="average">10sp</dimen>
+    <dimen name="medium">11sp</dimen>
+</resources>

@@ -6,10 +6,19 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textViewStyle">@style/QuestrialTextViewStyle</item>
+        <item name="android:textViewStyle">@style/QuestrialViewStyle</item>
         <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
         <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
         <item name="android:windowExitTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
+        <item name="buttonStyle">@style/QuestrialButtonStyle</item>
+    </style>
+
+    <style name="QuestrialViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/questrial</item>
+    </style>
+
+    <style name="QuestrialButtonStyle" parent="android:Widget.Holo.Button">
+        <item name="android:fontFamily">@font/questrial</item>
     </style>
 
     <style name="SetToolbar"

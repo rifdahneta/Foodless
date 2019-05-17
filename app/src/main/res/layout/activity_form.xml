@@ -8,185 +8,194 @@
     android:theme="@style/FormLayout"
     tools:context=".Activity.Form">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="325dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/background_login"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <RadioGroup
-            android:id="@+id/radioJenis"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center"
+            android:background="@drawable/background_login"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/formJenis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/bgcolor"
-                android:text="Jenis Donasi" />
-
-            <RadioButton
-                android:id="@+id/radioIndividu"
+            <RadioGroup
+                android:id="@+id/radioJenis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/bgcolor"
-                android:textColor="@color/bgcolor"
-                android:text="@string/individu" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp">
 
-            <RadioButton
-                android:id="@+id/radioEvent"
+                <TextView
+                    android:id="@+id/formJenis"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Donasi"
+                    android:textColor="@color/bgcolor" />
+
+                <RadioButton
+                    android:id="@+id/radioIndividu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/bgcolor"
+                    android:text="@string/individu"
+                    android:textColor="@color/bgcolor" />
+
+                <RadioButton
+                    android:id="@+id/radioEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/bgcolor"
+                    android:text="@string/event"
+                    android:textColor="@color/bgcolor" />
+            </RadioGroup>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:buttonTint="@color/bgcolor"
-                android:text="@string/event"
-                android:textColor="@color/bgcolor" />
-        </RadioGroup>
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/nama">
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/nama">
+                <EditText
+                    android:id="@+id/formNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="text"
+                    android:textColor="@color/Abu"
+                    android:textColorHint="@color/formBackground" />
 
-            <EditText
-                android:id="@+id/formNama"
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/questrial"
-                android:textColor="@color/Abu"
-                android:textColorHint="@color/formBackground" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/telepon">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/formTelepon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="phone"
+                    android:textColor="@color/Abu"
+                    android:textColorHint="@color/formBackground" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/telepon">
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/formTelepon"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/questrial"
-                android:inputType="phone"
-                android:textColor="@color/Abu"
-                android:textColorHint="@color/formBackground" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/email">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/formEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/Abu"
+                    android:textColorHint="@color/formBackground" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Email">
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/formEmail"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/questrial"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/Abu"
-                android:textColorHint="@color/formBackground" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/jenis_makanan">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/formJenisMakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="text"
+                    android:textColor="@color/Abu"
+                    android:textColorHint="@color/formBackground" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Jenis Makanan">
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/formJenisMakanan"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/questrial"
-                android:inputType="text"
-                android:textColor="@color/Abu"
-                android:textColorHint="@color/formBackground" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Tanggal Kadaluarsa">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/formKadaluarsa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="date"
+                    android:textColor="@color/Abu"
+                    android:textColorHint="@color/formBackground" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Tanggal Kadaluarsa">
+            </android.support.design.widget.TextInputLayout>
 
-            <EditText
-                android:id="@+id/formKadaluarsa"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/questrial"
-                android:inputType="date"
-                android:textColor="@color/Abu"
-                android:textColorHint="@color/formBackground" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Jumlah Porsi">
 
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Jumlah Porsi">
+                <EditText
+                    android:id="@+id/formPorsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="number"
+                    android:textColor="@color/Abu"
+                    android:textColorHint="@color/formBackground" />
 
-            <EditText
-                android:id="@+id/formPorsi"
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/questrial"
-                android:inputType="number"
-                android:textColor="@color/Abu"
-                android:textColorHint="@color/formBackground" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/keterangan">
 
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Keterangan">
+                <EditText
+                    android:id="@+id/formKeterangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/Abu"
+                    android:textColorHint="@color/formBackground" />
 
-            <EditText
-                android:id="@+id/formKeterangan"
-                android:layout_width="match_parent"
-                android:layout_height="108dp"
-                android:fontFamily="@font/questrial"
-                android:inputType="text"
-                android:textColor="@color/Abu"
-                android:textColorHint="@color/formBackground" />
-
-        </android.support.design.widget.TextInputLayout>
-    </LinearLayout>
-
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
