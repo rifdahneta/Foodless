@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "357065418400",
+    "firebase_url": "https://foodless-c8972.firebaseio.com",
+    "project_id": "foodless-c8972",
+    "storage_bucket": "foodless-c8972.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357065418400:android:f59f3a6a726e3fdd",
+        "android_client_info": {
+          "package_name": "pnj.ac.id.foodless"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357065418400-u44mtlj4ie09eueijjbc73hi58ebu7pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyfFuml3P9u5z-l8ndxTThbRdh8d_UKQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357065418400-u44mtlj4ie09eueijjbc73hi58ebu7pm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
