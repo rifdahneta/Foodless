@@ -27,6 +27,14 @@
     <string name="telepon">Telepon</string>
     <string name="jenis_makanan">Jenis Makanan</string>
     <string name="exindividu">Ex: Janu, RM Padang</string>
+    <string name="error_input_nama">Please enter your name</string>
+    <string name="error_input_email">Please enter your e-mail</string>
+    <string name="error_input_password">Please enter your password</string>
+    <string name="error_input_phone">Please enter your phone number</string>
+    <string name="error_input_address">Please enter your address</string>
+    <string name="succeed_register">Successfully Registered</string>
+    <string name="minimum_password">Password must be at least 8 characters long</string>
+    <string name="auth_failed">Authentication Failed</string>
     <string name="keterangan">Keterangan</string>
 
 </resources>
