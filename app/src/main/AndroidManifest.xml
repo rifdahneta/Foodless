@@ -31,9 +31,6 @@
         <activity android:name=".Activity.Form"
             tools:ignore="InnerclassSeparator"/>
 
-        <activity android:name=".Activity.userProfile"
-            tools:ignore="InnerclassSeparator"/>
-
 
     </application>
 

@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         auth = FirebaseAuth.getInstance();
 
         if(auth.getCurrentUser() != null) {
-            startActivity(new Intent(Login.this, userProfile.class));
+            startActivity(new Intent(Login.this, MainActivity.class));
         }
     }
 
@@ -103,7 +103,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             //email verified, proceed to finish this activity
             finish();
             Toast.makeText(Login.this, "Successfully logged in", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(Login.this, userProfile.class);
+            Intent i = new Intent(Login.this, MainActivity.class);
             startActivity(i);
             finish();
         } else if (!user.isEmailVerified()) {

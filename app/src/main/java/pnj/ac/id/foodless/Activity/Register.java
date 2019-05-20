@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -57,7 +58,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         if(firebaseAuth.getCurrentUser() != null)
         {
-            startActivity(new Intent(Register.this, userProfile.class));
+            startActivity(new Intent(Register.this, Login.class));
         }
     }
 
@@ -135,34 +136,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                     }
                 });
 
-//        firebaseAuth.createUserWithEmailAndPassword(eMail, pass)
-//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if(task.isSuccessful()){
-//                           User user = new User(fullName, alamat, phoneNo, email, pass);
-//
-//                            FirebaseDatabase.getInstance().getReference("Users")
-//                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-//                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<Void> task) {
-//                                   progressBar.setVisibility(View.GONE);
-//                                    if (task.isSuccessful())
-//                                    {
-//                                        sendEmailVerif();
-//
-//                                    } else
-//                                    {
-//                                        Toast.makeText(Register.this, "Register failed", Toast.LENGTH_LONG).show();
-//                                    }
-//                                }
-//                            });
-//                        } else {
-//                            Toast.makeText(Register.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                });
 
     }
 
