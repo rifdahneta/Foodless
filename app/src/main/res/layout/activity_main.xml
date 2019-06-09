@@ -28,6 +28,7 @@
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation_items"
+        android:backgroundTint="#ffffff"
         >
 
     </android.support.design.widget.BottomNavigationView>
