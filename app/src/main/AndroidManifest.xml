@@ -11,30 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
-
-        <activity android:name=".Activity.SplashScreen"
+        <activity android:name=".DetailActivity"></activity>
+        <activity
+            android:name=".Activity.SplashScreen"
             tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity"
+        <activity
+            android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator" />
-
-        <activity android:name=".Activity.Register"
+        <activity
+            android:name=".Activity.Register"
             tools:ignore="InnerclassSeparator" />
-
-        <activity android:name=".Activity.Login"
+        <activity
+            android:name=".Activity.Login"
             tools:ignore="InnerclassSeparator" />
-
-        <activity android:name=".Activity.Form"
-            tools:ignore="InnerclassSeparator"/>
-
-
+        <activity
+            android:name=".Activity.Form"
+            tools:ignore="InnerclassSeparator" />
     </application>
 
 </manifest>
-
-
-

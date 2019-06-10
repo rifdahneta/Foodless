@@ -17,6 +17,11 @@ import pnj.ac.id.foodless.R;
 
 public class MainActivity extends AppCompatActivity {
 
+//    private static final String TAG = "HomeFragment";
+//    private ArrayList<Communities> mKomunitas = new ArrayList<>();
+//    private ArrayList<String> ImgList = new ArrayList<>();
+
+
     private BottomNavigationView mainNav;
     private FrameLayout mainFrame;
     private HomeFragment homefrgament;
@@ -65,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
+//        RecyclerCardCommunities();
     }
 
     private void setFragment (Fragment fragment){

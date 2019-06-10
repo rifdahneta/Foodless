@@ -29,8 +29,8 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation_items"
         >
-
     </android.support.design.widget.BottomNavigationView>
+
 </android.support.constraint.ConstraintLayout>
 </RelativeLayout>
 
