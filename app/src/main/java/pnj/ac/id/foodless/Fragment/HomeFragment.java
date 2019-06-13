@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,22 +44,27 @@ public class HomeFragment extends Fragment {
     //private String currentUserID;
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         HomeView = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        return HomeView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         rcy_komunitas = (RecyclerView) HomeView.findViewById(R.id.rcy_komunitas);
-        rcy_komunitas.setLayoutManager(new GridLayoutManager(getActivity(),  2));
+        rcy_komunitas.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
 
         mAuth = FirebaseAuth.getInstance();
         //currentUserID = mAuth.getCurrentUser().getUid();
         KomunitasRef = FirebaseDatabase.getInstance().getReference().child("komunitas");
-
-        return HomeView;
+        initData();
     }
-
 
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
@@ -75,10 +83,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-
+    public void initData() {
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Communities>()
                 .setQuery(KomunitasRef, Communities.class)
                 .build();
@@ -87,44 +92,24 @@ public class HomeFragment extends Fragment {
         FirebaseRecyclerAdapter<Communities, RecyclerViewHolder> adapter
                 = new FirebaseRecyclerAdapter<Communities, RecyclerViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position, @NonNull Communities model)
-            {
+            protected void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position, @NonNull Communities model) {
                 String userIDs = getRef(position).getKey();
                 KomunitasRef.child(userIDs).addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot)
-                    {
-                        if(dataSnapshot.hasChild("komunitas"))
-                        {
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
+                            String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
                             String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
-                            String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
-                            String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
 
                             holder.mJudul.setText(judul);
                             holder.mDesc.setText(desc);
-                            //Picasso.get().load(image).placeholder(R.drawable.buttonprofile).into(holder.mImage);
-                            Picasso.get()
+
+                            Log.e("image", image);
+                            Glide.with(getActivity())
                                     .load(image)
-                                    .into(holder.mImage, new Callback() {
-                                        @Override
-                                        public void onSuccess() {
-                                        }
-
-                                        @Override
-                                        public void onError(Exception e) {
-                                        }
-                                    });
+                                    .override(150, 150)
+                                    .into(holder.mImage);
                         }
-
-                        else {
-                            String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
-                            String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
-
-                            holder.mJudul.setText(judul);
-                            holder.mDesc.setText(desc);
-                        }
-
-                    }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -148,8 +133,7 @@ public class HomeFragment extends Fragment {
 
             @NonNull
             @Override
-            public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i)
-            {
+            public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
                 View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_communities, viewGroup, false);
                 RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
                 return viewHolder;

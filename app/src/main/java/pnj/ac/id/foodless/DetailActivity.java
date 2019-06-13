@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -66,7 +67,10 @@ public class DetailActivity extends AppCompatActivity {
                     String dMember = dataSnapshot.child("jumlah_member").getValue().toString();
                     String dDesc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
 
-                    Picasso.get().load(dImage).placeholder(R.drawable.buttonprofile).into(detailImg);
+                    Glide.with(getApplicationContext())
+                            .load(dImage)
+                            .into(detailImg);
+
                     detJudul.setText(djudul);
                     detAlamat.setText(dAlamat);
                     detEmail.setText(dEmail);

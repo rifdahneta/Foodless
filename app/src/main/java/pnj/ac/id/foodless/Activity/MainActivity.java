@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        mainNav.setSelectedItemId(R.id.btnHome);
 //        RecyclerCardCommunities();
     }
 
