@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BottomNavigationView mainNav;
     private FrameLayout mainFrame;
-    private HomeFragment homefrgament;
+    private HomeFragment homefragment;
     private FoodfactFragment foodfactfragment;
     private HistoryFragment historyfragment;
     private ProfileFragment profilefragment;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mainNav = findViewById(R.id.main_nav);
         mainFrame = findViewById(R.id.main_frame);
 
-        homefrgament = new HomeFragment();
+        homefragment = new HomeFragment();
         foodfactfragment = new FoodfactFragment();
         historyfragment = new HistoryFragment();
         profilefragment = new ProfileFragment();
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch(menuItem.getItemId()){
                     case R.id.btnHome:
-                        setFragment(homefrgament);
+                        setFragment(homefragment);
                         break;
 
                     case R.id.btnfoodfact:
