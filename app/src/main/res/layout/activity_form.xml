@@ -196,6 +196,17 @@
                     android:textColorHint="@color/formBackground" />
 
             </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_btn_rounded"
+                android:backgroundTint="@color/hijau"
+                android:text="@string/submit" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
