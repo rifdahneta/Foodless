@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Register"
+    tools:context=".RegistrasiKomunitas"
     android:theme="@style/FormLayout"
     android:background="@color/putih">
 
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:fontFamily="@font/questrial"
-                android:text="@string/regis_donatur"
+                android:text="@string/regis_komunitas"
                 android:textColor="@color/bgcolor"
                 android:textSize="32sp" />
 
@@ -43,7 +43,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/image1" />
+                android:src="@drawable/image2" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -90,6 +90,25 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginLeft="16dp"
+                android:hint="@string/description">
+
+                <EditText
+                    android:id="@+id/edit_deskripsi_regis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/questrial"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/bgcolor"
+                    android:textColorHint="@color/bgcolor" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
                 android:hint="@string/phone_number">
 
                 <EditText
@@ -101,6 +120,7 @@
                     android:textColor="@color/bgcolor"
                     android:textColorHint="@color/bgcolor" />
             </android.support.design.widget.TextInputLayout>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,6 +138,25 @@
                     android:inputType="textEmailAddress"
                     android:textColor="@color/bgcolor"
                     android:textColorHint="@color/bgcolor" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:hint="@string/member">
+
+                <EditText
+                    android:id="@+id/edit_member_regis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/bgcolor"
+                    android:inputType="text"
+                    android:textColor="@color/bgcolor"
+                    android:fontFamily="@font/questrial"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -163,7 +202,6 @@
                 android:layout_centerInParent="true"
                 android:visibility="gone"
                 />
-
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
