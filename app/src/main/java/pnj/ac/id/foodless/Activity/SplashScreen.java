@@ -7,11 +7,14 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import pnj.ac.id.foodless.R;
 
 public class SplashScreen extends AppCompatActivity {
 
     ImageView imglogo;
+//    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +36,7 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                Intent intent = new Intent(SplashScreen.this, Register.class);
                 startActivity(intent);
                 finish();
             }
@@ -43,5 +46,6 @@ public class SplashScreen extends AppCompatActivity {
 
             }
         });
+
     }
 }
