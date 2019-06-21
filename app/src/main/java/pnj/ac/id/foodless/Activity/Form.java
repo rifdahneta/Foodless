@@ -76,8 +76,11 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
             getKeterangan = formKeterangan.getText().toString();
             getReference = database.getReference();
 
+            DatabaseReference postsRef = getReference.child("donasi");
+            DatabaseReference newPostRef = postsRef.push();
+
             //menyimpan data
-            getReference.child("donasi").setValue(new FormModel(getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail  ))
+            newPostRef.setValue(new FormModel(getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail  ))
                     .addOnSuccessListener(this, new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
