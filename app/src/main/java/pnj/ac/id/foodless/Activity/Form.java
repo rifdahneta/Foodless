@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -25,15 +24,14 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
     private RadioGroup radioJenis;
     private RadioButton radioEvent, radioIndividu;
     private String getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail;
-    private ProgressBar progressBar;
+
     private FirebaseDatabase database;
     private DatabaseReference getReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
-        progressBar = findViewById(R.id.progress);
-        progressBar.setVisibility(View.GONE);
+
 
         //inisialisasi ID edit text
         formNama = findViewById(R.id.formNama);
