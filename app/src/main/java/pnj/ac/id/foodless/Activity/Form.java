@@ -74,6 +74,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
             getKadaluarsa = formKadaluarsa.getText().toString();
             getJumlahPorsi = formPorsi.getText().toString();
             getKeterangan = formKeterangan.getText().toString();
+            getReference = database.getReference();
 
             //menyimpan data
             getReference.child("donasi").setValue(new FormModel(getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail  ))
