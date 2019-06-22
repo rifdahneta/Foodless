@@ -37,10 +37,24 @@
 
 
         <TextView
-            android:id="@+id/emailUser"
+            android:id="@+id/fullNameProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/topBg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"
+            android:text="@string/full_name"
+            android:textSize="20sp"
+            android:textColor="@color/hitam"
+            android:fontFamily="@font/questrial"
+            />
+
+        <TextView
+            android:id="@+id/emailProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/fullNameProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
@@ -51,24 +65,10 @@
             />
 
         <TextView
-            android:id="@+id/passwordUser"
+            android:id="@+id/phoneProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/emailUser"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="40dp"
-            android:text="@string/password"
-            android:textSize="20sp"
-            android:textColor="@color/hitam"
-            android:fontFamily="@font/questrial"
-            />
-
-        <TextView
-            android:id="@+id/phoneUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/passwordUser"
+            app:layout_constraintTop_toBottomOf="@id/emailProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
@@ -79,10 +79,10 @@
             />
 
         <TextView
-            android:id="@+id/addressUser"
+            android:id="@+id/addressProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/phoneUser"
+            app:layout_constraintTop_toBottomOf="@id/phoneProfile"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
@@ -91,6 +91,18 @@
             android:textColor="@color/hitam"
             android:fontFamily="@font/questrial"
             />
+        <TextView
+            android:id="@+id/text_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/questrial"
+            android:text="@string/logout"
+            android:textColor="@color/hitam"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addressProfile" />
     </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>

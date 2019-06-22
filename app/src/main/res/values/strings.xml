@@ -43,5 +43,6 @@
     <string name="member">Member</string>
     <string name="description">Description</string>
     <string name="donate">Lets Donate</string>
+    <string name="logout">Sign Out</string>
 
 </resources>
