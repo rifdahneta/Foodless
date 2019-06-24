@@ -81,13 +81,13 @@ public class FormModel {
 
     public FormModel(String jenis, String jenisMakanan, String jumlahPorsi, String kadaluarsa, String keterangan, String nama, String telepon, String email){
         this.jenis = jenis;
-        this.jenis = jenisMakanan;
-        this.jenis = jumlahPorsi;
-        this.jenis = kadaluarsa;
-        this.jenis = keterangan;
-        this.jenis = nama;
-        this.jenis = telepon;
-        this.jenis = email;
+        this.jenisMakanan = jenisMakanan;
+        this.jumlahPorsi = jumlahPorsi;
+        this.kadaluarsa = kadaluarsa;
+        this.keterangan = keterangan;
+        this.nama = nama;
+        this.telepon = telepon;
+        this.email = email;
     }
 
 }

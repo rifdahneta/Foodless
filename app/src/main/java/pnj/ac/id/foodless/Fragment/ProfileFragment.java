@@ -101,15 +101,6 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-   /* private void sign_out(){
-        FirebaseAuth.getInstance().signOut();
-        CurrentUser.full_name = null;
-        CurrentUser.email = null;
-        CurrentUser.address = null;
-        CurrentUser.phone = null;
-        Intent intent = new Intent (ProfileFragment.this.getActivity(), Login.class);
-        startActivity(intent);
 
-    }*/
 
 }

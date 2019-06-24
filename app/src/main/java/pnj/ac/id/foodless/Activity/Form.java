@@ -23,7 +23,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
     private Button btnForm;
     private RadioGroup radioJenis;
     private RadioButton radioEvent, radioIndividu;
-    private String getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail;
+   private String getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail;
 
     private FirebaseDatabase database;
     private DatabaseReference getReference;
@@ -77,7 +77,9 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
             getReference = database.getReference();
 
             //menyimpan data
-            getReference.child("donasi").setValue(new FormModel(getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail  ))
+            getReference.child("donasi")
+                    .push()
+                    .setValue(new FormModel(getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail  ))
                     .addOnSuccessListener(this, new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
