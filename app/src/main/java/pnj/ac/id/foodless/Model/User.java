@@ -4,20 +4,20 @@ public class User {
 
     private String full_name;
     private String address;
-    private String phone;
+    private long phone;
     private String email;
     private String password;
 
-    public User(){
-
-    }
-
-    public User (String full_name, String address, String phone, String email, String password){
+    public User (String full_name, String address, long phone, String email, String password){
         this.full_name = full_name;
         this.address = address;
         this.phone = phone;
         this.email = email;
         this.password = password;
+    }
+
+    public User(){
+
     }
 
     public String getFullName(){
@@ -36,7 +36,7 @@ public class User {
         this.address = address;
     }
 
-    public String getPhone(){
+    public long getPhone(){
         return phone;
     }
 
@@ -58,5 +58,13 @@ public class User {
 
     public void setPassword(){
         this.password = password;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+        "full_name='" + full_name + '\'' + ", address='" + address + '\'' +
+        ", phone='" + phone + '\'' + ", email='" + email + '\'' + ", password= '" + password + '\'' + '}';
     }
 }

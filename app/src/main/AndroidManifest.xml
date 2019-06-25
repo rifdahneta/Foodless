@@ -14,11 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
+        <activity android:name=".Activity.userProfile"></activity>
+        <activity android:name=".RegistrasiKomunitas" />
+        <activity android:name=".Activity.ChooseRegister" />
+        <activity android:name=".DetailActivity" />
         <activity
             android:name=".Activity.SplashScreen"
             tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
