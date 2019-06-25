@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -20,12 +19,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import pnj.ac.id.foodless.R;
-import pnj.ac.id.foodless.User;
+import pnj.ac.id.foodless.Model.User;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editRegFullname, editRegAlamat, editRegPhone, editRegEmail, editRegPassword;
-    private Button btnRegis;
+    private Button btnRegis, btnLoginReg;
     private ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
 
@@ -44,11 +43,15 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         editRegPassword = findViewById(R.id.edit_password_regis);
 
         btnRegis = findViewById(R.id.button_regis);
+        btnLoginReg = findViewById(R.id.button_loginreg);
+
+
         progressBar = findViewById(R.id.progress_regis);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
         btnRegis.setOnClickListener(this);
+        btnLoginReg.setOnClickListener(this);
     }
 
     @Override
@@ -109,6 +112,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         progressBar.setVisibility(View.VISIBLE);
 
+
+        /**
+         * Register a new email and password to Firebase Authentication
+         * @param email
+         * @param password
+         * @param username
+         */
         firebaseAuth.createUserWithEmailAndPassword(eMail, pass)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -172,7 +182,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         {
             registerUser();
         }
-    }
+
+        if (v.getId()== R.id.button_loginreg)
+        {
+            Intent i = new Intent (Register.this, Login.class);
+            startActivity(i);
+        }  }
+
+
 
 }
 
