@@ -27,6 +27,6 @@ public class OrderDetail extends AppCompatActivity {
         txtKadaluarsaDetail = findViewById(R.id.txtMasaKadaluarsaDetail);
         txtPorsi = findViewById(R.id.txtJumlahPorsiDetail);
         txtAlamat = findViewById(R.id.txtAlamatDetail);
-        
+
     }
 }

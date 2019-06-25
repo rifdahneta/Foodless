@@ -9,6 +9,15 @@ public class FormModel {
     private String nama;
     private String telepon;
     private String email;
+    private String alamat;
+
+    public String getAlamat() {
+        return alamat;
+    }
+
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
 
     public String getJenis() {
         return jenis;
@@ -79,7 +88,7 @@ public class FormModel {
 
     }
 
-    public FormModel(String jenis, String jenisMakanan, String jumlahPorsi, String kadaluarsa, String keterangan, String nama, String telepon, String email){
+    public FormModel(String jenis, String jenisMakanan, String jumlahPorsi, String kadaluarsa, String keterangan, String nama, String telepon, String email, String alamat){
         this.jenis = jenis;
         this.jenisMakanan = jenisMakanan;
         this.jumlahPorsi = jumlahPorsi;
@@ -88,6 +97,7 @@ public class FormModel {
         this.nama = nama;
         this.telepon = telepon;
         this.email = email;
+        this.alamat = alamat;
     }
 
 }

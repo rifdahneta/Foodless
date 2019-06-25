@@ -19,11 +19,11 @@ import pnj.ac.id.foodless.R;
 public class Form extends AppCompatActivity implements View.OnClickListener {
 
 
-    private EditText formNama, formTelepon, formEmail, formJenisMakanan, formKadaluarsa, formPorsi, formKeterangan;
+    private EditText formNama, formTelepon, formEmail, formJenisMakanan, formKadaluarsa, formPorsi, formKeterangan, formAlamat;
     private Button btnForm;
     private RadioGroup radioJenis;
     private RadioButton radioEvent, radioIndividu;
-   private String getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail;
+   private String getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail, getAlamat;
 
     private FirebaseDatabase database;
     private DatabaseReference getReference;
@@ -41,6 +41,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
         formKadaluarsa = findViewById(R.id.formKadaluarsa);
         formPorsi = findViewById(R.id.formPorsi);
         formKeterangan = findViewById(R.id.formKeterangan);
+        formAlamat = findViewById(R.id.formAlamat);
 
         //inisialisasi ID button
         btnForm = findViewById(R.id.btnForm);
@@ -74,12 +75,13 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
             getKadaluarsa = formKadaluarsa.getText().toString();
             getJumlahPorsi = formPorsi.getText().toString();
             getKeterangan = formKeterangan.getText().toString();
+            getAlamat = formAlamat.getText().toString();
             getReference = database.getReference();
 
             //menyimpan data
             getReference.child("donasi")
                     .push()
-                    .setValue(new FormModel(getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail  ))
+                    .setValue(new FormModel(getJenis, getJenisMakanan, getJumlahPorsi, getKadaluarsa, getKeterangan, getNama, getTelepon, getEmail,getAlamat  ))
                     .addOnSuccessListener(this, new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
@@ -91,6 +93,7 @@ public class Form extends AppCompatActivity implements View.OnClickListener {
                             formKadaluarsa.setText("");
                             formPorsi.setText("");
                             formKeterangan.setText("");
+                            formAlamat.setText("");
                             Toast.makeText(Form.this, "Data Tersimpan", Toast.LENGTH_SHORT).show();
                         }
                     });

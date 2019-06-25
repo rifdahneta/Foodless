@@ -45,5 +45,7 @@
     <string name="donate">Lets Donate</string>
     <string name="logout">Sign Out</string>
     <string name="title_activity_detail_order">DetailOrder</string>
-
+    <string name="donatur">Donatur</string>
+    <string name="komunitas">Komunitas</string>
+    <string name="alamat">Alamat</string>
 </resources>

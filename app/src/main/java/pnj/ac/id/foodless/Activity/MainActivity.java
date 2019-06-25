@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainNav.setSelectedItemId(R.id.btnHome);
 //        RecyclerCardCommunities();
+      //  onBackPressed();
     }
 
     private void setFragment (Fragment fragment){
