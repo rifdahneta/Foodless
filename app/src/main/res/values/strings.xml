@@ -46,4 +46,6 @@
     <string name="logout">Sign Out</string>
     <string name="donatur">Donatur</string>
     <string name="komunitas">Komunitas</string>
+
+    <string name="alamat">Alamat</string>
 </resources>
