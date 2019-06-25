@@ -45,7 +45,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         btnRegis = findViewById(R.id.button_regis);
         btnLoginReg = findViewById(R.id.button_loginreg);
-        
+
 
         progressBar = findViewById(R.id.progress_regis);
 
