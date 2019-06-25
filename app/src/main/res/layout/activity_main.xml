@@ -27,7 +27,9 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/navigation_items">
+        app:menu="@menu/navigation_items"
+        android:backgroundTint="@color/putih"
+        >
     </android.support.design.widget.BottomNavigationView>
 
 </android.support.constraint.ConstraintLayout>
