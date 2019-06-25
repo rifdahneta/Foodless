@@ -25,8 +25,9 @@ import pnj.ac.id.foodless.Activity.Form;
 import pnj.ac.id.foodless.Activity.Login;
 import pnj.ac.id.foodless.CurrentUser;
 import pnj.ac.id.foodless.DetailActivity;
+import pnj.ac.id.foodless.Model.User;
 import pnj.ac.id.foodless.R;
-import pnj.ac.id.foodless.User;
+import pnj.ac.id.foodless.Model.User;
 
 import static android.support.constraint.Constraints.TAG;
 

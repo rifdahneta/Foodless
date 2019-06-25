@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import pnj.ac.id.foodless.R;
-import pnj.ac.id.foodless.RegistrasiKomunitas;
 
 public class ChooseRegister extends AppCompatActivity {
 

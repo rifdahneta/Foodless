@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String roleUser;
 
-    public User(){
+    public User(String fullName, String alamat, String phoneNo, String eMail, String pass){
 
     }
 
