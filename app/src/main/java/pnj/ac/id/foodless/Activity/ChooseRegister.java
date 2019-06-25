@@ -15,8 +15,6 @@ public class ChooseRegister extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_register);
     }
-}
-
 
     public void regis_komunitas(View view)
     {
@@ -29,4 +27,5 @@ public class ChooseRegister extends AppCompatActivity {
         Intent intent = new Intent(ChooseRegister.this, RegistrasiKomunitas.class);
         startActivity(intent);
     }
+
 }

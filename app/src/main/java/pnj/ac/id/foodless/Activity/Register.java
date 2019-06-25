@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private Button btnRegis, btnLoginReg;
     private ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
+    private RadioButton radDonatur, radKomunitas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         btnRegis = findViewById(R.id.button_regis);
         btnLoginReg = findViewById(R.id.button_loginreg);
 
+        radDonatur = findViewById(R.id.radioDonatur);
+        radKomunitas = findViewById(R.id.radioKomunitas);
 
         progressBar = findViewById(R.id.progress_regis);
 
@@ -109,6 +113,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
             editRegPassword.requestFocus();
             return;
         }
+
+        if(radKomunitas.is)
 
         progressBar.setVisibility(View.VISIBLE);
 
