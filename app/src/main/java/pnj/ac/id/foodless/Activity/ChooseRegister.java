@@ -18,13 +18,13 @@ public class ChooseRegister extends AppCompatActivity {
 
     public void regis_komunitas(View view)
     {
-        Intent intent = new Intent(ChooseRegister.this, Register.class);
+        Intent intent = new Intent(ChooseRegister.this, RegistrasiKomunitas.class);
         startActivity(intent);
     }
 
     public void regis_donatur (View view)
     {
-        Intent intent = new Intent(ChooseRegister.this, RegistrasiKomunitas.class);
+        Intent intent = new Intent(ChooseRegister.this, Register.class);
         startActivity(intent);
     }
 

@@ -18,6 +18,7 @@
         android:layout_marginBottom="24dp"
         android:text="Choose Registration"
         android:textSize="30sp"
+        android:textColor="@color/bgcolor"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +50,7 @@
         android:layout_marginEnd="8dp"
         android:text="Komunitas"
         android:textSize="24sp"
+        android:textColor="@color/bgcolor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -77,5 +79,6 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        android:textColor="@color/bgcolor"/>
 </android.support.constraint.ConstraintLayout>
