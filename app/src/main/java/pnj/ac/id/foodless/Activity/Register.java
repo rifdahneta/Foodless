@@ -28,7 +28,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private Button btnRegis, btnLoginReg;
     private ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
-    private RadioButton radDonatur, radKomunitas, radJenisUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +45,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         btnRegis = findViewById(R.id.button_regis);
         btnLoginReg = findViewById(R.id.button_loginreg);
-
-        radJenisUser = findViewById(R.id.radioJenisUser)
-        radDonatur = findViewById(R.id.radioDonatur);
-        radKomunitas = findViewById(R.id.radioKomunitas);
+        
 
         progressBar = findViewById(R.id.progress_regis);
 
