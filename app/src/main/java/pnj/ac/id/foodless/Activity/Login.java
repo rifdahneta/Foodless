@@ -86,7 +86,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         if (v.getId()== R.id.buttonlog_register)
         {
-            Intent i = new Intent (Login.this, Register.class);
+            Intent i = new Intent (Login.this, ChooseRegister.class);
             startActivity(i);
 
         }
