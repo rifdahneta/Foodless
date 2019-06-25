@@ -33,6 +33,8 @@
     <string name="jenis_makanan">Jenis Makanan</string>
     <string name="exindividu">Ex: Janu, RM Padang</string>
     <string name="error_input_nama">Please enter your name</string>
+    <string name="error_input_namakom">Please enter your community name</string>
+    <string name="error_input_jmlmember">Please enter the number of members</string>
     <string name="error_input_email">Please enter your e-mail</string>
     <string name="error_input_password">Please enter your password</string>
     <string name="error_input_phone">Please enter your phone number</string>
@@ -53,5 +55,6 @@
     <string name="title_activity_detail_order">DetailOrder</string>
     <string name="donatur">Donatur</string>
     <string name="komunitas">Komunitas</string>
+    <string name="nama_komunitas">Community Name</string>
 
 </resources>
