@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String roleUser;
 
-    public User(String fullName, String alamat, String phoneNo, String eMail, String pass){
+    public User(){
 
     }
 
@@ -20,6 +20,9 @@ public class User {
         this.email = email;
         this.password = password;
         this.roleUser = roleUser;
+    }
+
+    public User(String fullName, String alamat, String phoneNo, String eMail, String pass) {
     }
 
     public String getFullName(){

@@ -11,6 +11,9 @@ public class Communities {
     private String password_komunitas;
     private String jumlah_member;
 
+    public Communities(String namaKomunitas, String alamatKomunitas, String notelpKomunitas, String emailKomunitas, String passKomunitas, String jmlMemberKomunitas) {
+    }
+
     public String getNama_komunitas() {
         return nama_komunitas;
     }
@@ -75,9 +78,10 @@ public class Communities {
         this.jumlah_member = jumlah_member;
     }
 
-    public Communities(String namaKomunitas, String alamatKomunitas, String notelpKomunitas, String emailKomunitas, String passKomunitas, String jumlah_memberKomunitas){
+    public Communities(){
 
     }
+
     public Communities(String nama_komunitas, String jenis_kegiatan, String gambar_komunitas,
                        String alamat_komunitas, String notelp_komunitas, String email_komunitas,
                        String jumlah_member, String password_komunitas)
