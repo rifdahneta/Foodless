@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Activity.Register"
     android:theme="@style/FormLayout"
     android:background="@color/putih">
@@ -155,8 +155,9 @@
                 android:backgroundTint="@color/bgcolor"
                 android:textColor="@color/putih"
                 />
+
             <Button
-                android:id="@+id/button_login"
+                android:id="@+id/button_loginreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
