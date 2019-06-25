@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="pnj.ac.id.foodless">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,7 +16,6 @@
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
         <activity android:name=".Activity.OrderDetail"></activity>
         <activity android:name=".Activity.MainActivityKomunitas" />
-        <activity android:name="pnj.ac.id.foodless2.MainActivityKomunitas" />
         <activity
             android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator" />
@@ -26,6 +28,10 @@
         <activity
             android:name=".Activity.Form"
             tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".RegistrasiKomunitas" />
+        <activity android:name=".Activity.ChooseRegister" />
+        <activity android:name=".DetailActivity" />
         <activity
             android:name=".Activity.SplashScreen"
             tools:ignore="InnerclassSeparator">
@@ -35,6 +41,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

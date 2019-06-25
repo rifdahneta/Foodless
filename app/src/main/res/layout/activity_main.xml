@@ -31,7 +31,9 @@
         android:backgroundTint="@color/putih"
         tools:ignore="UnusedAttribute">
 
+
     </android.support.design.widget.BottomNavigationView>
+
 </android.support.constraint.ConstraintLayout>
 </RelativeLayout>
 

@@ -1,15 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textViewStyle">@style/QuestrialViewStyle</item>
         <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
-        <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
-        <item name="android:windowExitTransition" tools:targetApi="lollipop">@transition/activity_fade</item>
+        <item name="android:windowEnterTransition" tools:targetApi="lollipop">
+            @transition/activity_fade
+        </item>
+        <item name="android:windowExitTransition" tools:targetApi="lollipop">
+            @transition/activity_fade
+        </item>
         <item name="buttonStyle">@style/QuestrialButtonStyle</item>
     </style>
 
@@ -21,8 +25,7 @@
         <item name="android:fontFamily">@font/questrial</item>
     </style>
 
-    <style name="SetToolbar"
-        parent="AppTheme">
+    <style name="SetToolbar" parent="AppTheme">
         <item name="android:background">@color/formBackground</item>
         <item name="android:textColorPrimary">@color/putih</item>
         <item name="colorControlNormal">@color/putih</item>
@@ -46,7 +49,8 @@
 
 
     <style name="Widget.AppTheme.TextInputLayoutList" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="hintTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.HintTextAlt</item>
+        <item name="hintTextAppearance">@style/TextAppearance.AppTheme.TextInputLayout.HintTextAlt
+        </item>
         <item name="boxStrokeColor">@color/form_box_input_color</item>
         <item name="boxCornerRadiusBottomEnd">5dp</item>
         <item name="boxCornerRadiusBottomStart">5dp</item>
@@ -58,13 +62,11 @@
         <item name="android:textSize">11sp</item>
     </style>
 
-    <style name="TextAppearance.AppTheme.TextInputLayout.HintTextAlt"
-        parent="TextAppearance.MaterialComponents.Subtitle2">
+    <style name="TextAppearance.AppTheme.TextInputLayout.HintTextAlt" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textColor">@color/bgcolor</item>
     </style>
 
-    <style name="formEdtStyle"
-        parent="android:Widget.EditText">
+    <style name="formEdtStyle" parent="android:Widget.EditText">
         <item name="android:padding">10dp</item>
 
     </style>
@@ -79,8 +81,7 @@
     </style>
 
 
-    <style name="MyCheckBoxStyle"
-        parent="Widget.AppCompat.CompoundButton.CheckBox">
+    <style name="MyCheckBoxStyle" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:textColor">@color/putih</item>
         <item name="buttonTint">@color/putih</item>
         <item name="android:layout_marginTop">5dp</item>
@@ -92,8 +93,7 @@
     </style>
 
 
-    <style name="QuestrialTextViewStyle"
-        parent="android:Widget.TextView">
+    <style name="QuestrialTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/questrial</item>
     </style>
 
@@ -120,4 +120,13 @@
         <item name="boxStrokeColor">#fff</item>
         <item name="boxStrokeWidth">2dp</item>
     </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

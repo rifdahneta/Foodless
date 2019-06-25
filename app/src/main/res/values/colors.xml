@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="bgcolor">#006f3c</color>
+    <color name="lighterbgcolor">#009247</color>
 
     <color name="hijau">#006F3c</color>
     <color name="Abu">#b7b7b7</color>
@@ -15,5 +16,5 @@
 
     <color name="mtrl_textinput_default_box_stroke_color" tools:override = "true">#006f3c</color>
     <color name="mtrl_textinput_disabled_color" tools:override = "true">#99000000</color>
-
 </resources>
+

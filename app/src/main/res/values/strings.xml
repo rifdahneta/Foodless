@@ -11,6 +11,8 @@
 
     <string name="app_name">Foodless</string>
     <string name="register">REGISTER</string>
+    <string name="regis_donatur">REGISTER DONATUR</string>
+    <string name="regis_komunitas">REGISTER COMMUNITY</string>
     <string name="full_name">Full Name</string>
     <string name="phone_number">Phone Number</string>
     <string name="email"> Email</string>
@@ -19,7 +21,7 @@
     <string name="restaurant_name"> Restaurant Name</string>
     <string name="contact_person"> Contact Person Name</string>
     <string name="choose_regis">Choose <b>One</b></string>
-    <string name="login">Login</string>
+    <string name="login">LOGIN</string>
     <string name="text_register">Dont have an account? Register <u> here</u> </string>
     <string name="nama">Nama Individu/Event</string>
     <string name="event">Event</string>
@@ -27,6 +29,21 @@
     <string name="telepon">Telepon</string>
     <string name="jenis_makanan">Jenis Makanan</string>
     <string name="exindividu">Ex: Janu, RM Padang</string>
+    <string name="error_input_nama">Please enter your name</string>
+    <string name="error_input_email">Please enter your e-mail</string>
+    <string name="error_input_password">Please enter your password</string>
+    <string name="error_input_phone">Please enter your phone number</string>
+    <string name="error_input_address">Please enter your address</string>
+    <string name="succeed_register">Successfully Registered</string>
+    <string name="minimum_password">Password must be at least 8 characters long</string>
+    <string name="auth_failed">Authentication Failed</string>
     <string name="keterangan">Keterangan</string>
+    <string name="submit">SUBMIT</string>
+    <string name="title">Title</string>
+    <string name="member">Member</string>
+    <string name="description">Description</string>
+    <string name="donate">Lets Donate</string>
+    <string name="logout">Sign Out</string>
+    <string name="title_activity_detail_order">DetailOrder</string>
 
 </resources>
