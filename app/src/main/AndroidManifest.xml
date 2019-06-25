@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
-        <activity android:name=".Activity.MainActivityKomunitas"></activity>
+        <activity android:name=".Activity.OrderDetail"></activity>
+        <activity android:name=".Activity.MainActivityKomunitas" />
         <activity android:name="pnj.ac.id.foodless2.MainActivityKomunitas" />
         <activity
             android:name=".Activity.MainActivity"
