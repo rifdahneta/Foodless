@@ -48,8 +48,10 @@
     <string name="description">Description</string>
     <string name="donate">Lets Donate</string>
     <string name="roleuser">Role</string>
-
     <string name="dbname_Users">users</string>
     <string name="logout">Sign Out</string>
     <string name="title_activity_detail_order">DetailOrder</string>
+    <string name="donatur">Donatur</string>
+    <string name="komunitas">Komunitas</string>
+
 </resources>
