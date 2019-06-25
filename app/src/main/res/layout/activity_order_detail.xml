@@ -58,14 +58,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Kategori :"
+            android:text="Jenis Donatur :"
             android:textSize="17sp"
             android:textColor="@color/putih"
-
             />
         <TextView
             android:paddingStart="10dp"
-            android:id="@+id/txtKategoriDonaturDetail"
+            android:id="@+id/txtJenisDonaturDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Individu"
@@ -121,7 +120,7 @@
             />
         <TextView
             android:paddingStart="10dp"
-            android:id="@+id/txtMasaBerlakuMakananDetail"
+            android:id="@+id/txtMasaKadaluarsaDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30/25/2019"
