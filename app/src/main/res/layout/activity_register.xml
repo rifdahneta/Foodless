@@ -63,43 +63,43 @@
                     android:textColor="@color/bgcolor"
                     android:textColorHint="@color/bgcolor" />
             </android.support.design.widget.TextInputLayout>
-            <RadioGroup
-                android:id="@+id/radioJenisUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="10dp">
+            <!--<RadioGroup-->
+                <!--android:id="@+id/radioJenisUser"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginRight="16dp"-->
+                <!--android:layout_marginBottom="10dp">-->
 
-                    <TextView
-                        android:id="@+id/jenisUser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Jenis User"
-                        android:textColor="@color/bgcolor"
-                        android:textSize="20sp"/>
+                    <!--<TextView-->
+                        <!--android:id="@+id/jenisUser"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Jenis User"-->
+                        <!--android:textColor="@color/bgcolor"-->
+                        <!--android:textSize="20sp"/>-->
 
-                    <RadioButton
-                    android:id="@+id/radioDonatur"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/bgcolor"
-                    android:text="@string/donatur"
-                    android:textColor="@color/bgcolor"
-                    android:textSize="18sp"/>
+                    <!--<RadioButton-->
+                    <!--android:id="@+id/radioDonatur"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:buttonTint="@color/bgcolor"-->
+                    <!--android:text="@string/donatur"-->
+                    <!--android:textColor="@color/bgcolor"-->
+                    <!--android:textSize="18sp"/>-->
 
-                <RadioButton
-                    android:id="@+id/radioKomunitas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/bgcolor"
-                    android:text="@string/komunitas"
-                    android:textColor="@color/bgcolor"
-                    android:textSize="18sp"/>
-            </RadioGroup>
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radioKomunitas"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:buttonTint="@color/bgcolor"-->
+                    <!--android:text="@string/komunitas"-->
+                    <!--android:textColor="@color/bgcolor"-->
+                    <!--android:textSize="18sp"/>-->
+            <!--</RadioGroup>-->
 
 
             <android.support.design.widget.TextInputLayout

@@ -124,7 +124,7 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
                             Communities user = new Communities(namaKomunitas, alamatKomunitas, notelpKomunitas,
                                     emailKomunitas, passKomunitas, jmlMemberKomunitas);
 
-                            FirebaseDatabase.getInstance().getReference("komunitas")
+                            FirebaseDatabase.getInstance().getReference("Communities")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

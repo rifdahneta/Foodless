@@ -7,22 +7,17 @@ public class User {
     private String phone;
     private String email;
     private String password;
-    private String roleUser;
 
     public User(){
 
     }
 
-    public User (String full_name, String address, String phone, String email, String password, String roleUser){
+    public User (String full_name, String address, String phone, String email, String password){
         this.full_name = full_name;
         this.address = address;
         this.phone = phone;
         this.email = email;
         this.password = password;
-        this.roleUser = roleUser;
-    }
-
-    public User(String fullName, String alamat, String phoneNo, String eMail, String pass) {
     }
 
     public String getFullName(){
@@ -64,10 +59,4 @@ public class User {
     public void setPassword(){
         this.password = password;
     }
-
-    public String getRoleUser() {
-        return roleUser;
-    }
-    public void setRoleUser(String roleUser) {
-        this.roleUser = roleUser;
-    }}
+}
