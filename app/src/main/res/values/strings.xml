@@ -55,13 +55,16 @@
     <string name="title_activity_detail_order">DetailOrder</string>
     <string name="donatur">Donatur</string>
     <string name="komunitas">Komunitas</string>
+
     <string name="nama_komunitas">Community Name</string>
 
-    <string name="alamat">Alamat</string>
 
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="fcm_message">FCM Message</string>
     <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
 
+
+    <string name="alamat">Alamat</string>
+    <string name="notification">Notification</string>
 
 </resources>

@@ -12,7 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity"
-    >
+    tools:ignore="RedundantNamespace">
 
     <FrameLayout
         android:id="@+id/main_frame"
@@ -29,7 +29,10 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation_items"
         android:background="@color/putih"
-        >
+        tools:ignore="UnusedAttribute">
+
+
+
     </android.support.design.widget.BottomNavigationView>
 
 </android.support.constraint.ConstraintLayout>

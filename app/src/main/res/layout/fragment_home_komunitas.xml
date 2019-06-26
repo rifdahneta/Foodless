@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <TextView
         android:id="@+id/tes"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,11 +17,17 @@
     <android.support.v7.widget.RecyclerView
         app:layout_constraintTop_toBottomOf="@id/tes"
         android:id="@+id/rcy_order"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toTopOf="parent">
 
     </android.support.v7.widget.RecyclerView>
+
+    <TextView
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="home komunitas"
+        />
 
 </android.support.constraint.ConstraintLayout>
