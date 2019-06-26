@@ -13,6 +13,9 @@ public class User {
 
     }
 
+    public User(){
+
+    }
     public User (String full_name, String address, String phone, String email, String password, String roleUser){
         this.full_name = full_name;
         this.address = address;
