@@ -46,9 +46,7 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
 
         btnRegisKomunitas = findViewById(R.id.button_regiskomunitas);
         progressBar = findViewById(R.id.progress_regiskom);
-
         firebaseAuthKomunitas = FirebaseAuth.getInstance();
-
         btnRegisKomunitas.setOnClickListener(this);
     }
 
@@ -56,13 +54,13 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
     protected void onStart() {
         super.onStart();
 
-        if(firebaseAuthKomunitas.getCurrentUser() != null){
+        if (firebaseAuthKomunitas.getCurrentUser() != null) {
             startActivity(new Intent(RegistrasiKomunitas.this, Login.class));
         }
 
     }
 
-    private void registerKomunitas(){
+    private void registerKomunitas() {
         final String namaKomunitas = editRegNamaKomunitas.getText().toString().trim();
         final String alamatKomunitas = editRegAlamatKomunitas.getText().toString().trim();
         final String notelpKomunitas = editRegPhoneKomunitas.getText().toString().trim();
@@ -70,45 +68,44 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
         final String passKomunitas = editRegPassKomunitas.getText().toString().trim();
         final String jmlMemberKomunitas = editRegMemberKomunitas.getText().toString().trim();
 
-        if(namaKomunitas.isEmpty()){
+        if (namaKomunitas.isEmpty()) {
             editRegNamaKomunitas.setError(getString(R.string.error_input_namakom));
             editRegNamaKomunitas.requestFocus();
             return;
         }
 
-        if (alamatKomunitas.isEmpty()){
+        if (alamatKomunitas.isEmpty()) {
             editRegAlamatKomunitas.setError(getString(R.string.error_input_address));
             editRegAlamatKomunitas.requestFocus();
             return;
         }
 
-        if(notelpKomunitas.isEmpty()){
+        if (notelpKomunitas.isEmpty()) {
             editRegPhoneKomunitas.setError(getString(R.string.error_input_phone));
             editRegPhoneKomunitas.requestFocus();
             return;
         }
 
-        if(emailKomunitas.isEmpty()){
+        if (emailKomunitas.isEmpty()) {
             editRegEmailKomunitas.setError(getString(R.string.error_input_email));
             editRegEmailKomunitas.requestFocus();
             return;
         }
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(emailKomunitas).matches())
-        {
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailKomunitas).matches()) {
             editRegEmailKomunitas.setError(getString(R.string.error_input_email));
             editRegEmailKomunitas.requestFocus();
             return;
         }
 
 
-        if(passKomunitas.isEmpty()) {
+        if (passKomunitas.isEmpty()) {
             editRegPassKomunitas.setError(getString(R.string.error_input_password));
             editRegPassKomunitas.requestFocus();
             return;
         }
 
-        if(jmlMemberKomunitas.isEmpty()) {
+        if (jmlMemberKomunitas.isEmpty()) {
             editRegMemberKomunitas.setError(getString(R.string.error_input_jmlmember));
             editRegMemberKomunitas.requestFocus();
             return;
@@ -116,12 +113,15 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
 
         progressBar.setVisibility(View.VISIBLE);
 
+
+//        String nama_komunitas, String jenis_kegiatan, String gambar_komunitas, String notelp_komunitas, String alamat_komunitas, String email_komunitas, String password_komunitas, String jumlah_member
+
         firebaseAuthKomunitas.createUserWithEmailAndPassword(emailKomunitas, passKomunitas)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Communities user = new Communities(namaKomunitas, alamatKomunitas, notelpKomunitas,
+                        if (task.isSuccessful()) {
+                            Communities user = new Communities(namaKomunitas, "", "", notelpKomunitas, alamatKomunitas,
                                     emailKomunitas, passKomunitas, jmlMemberKomunitas);
 
                             FirebaseDatabase.getInstance().getReference("komunitas")
@@ -130,7 +130,7 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     progressBar.setVisibility(View.GONE);
-                                    if(task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         sendEmailVerifKomunitas();
                                     } else {
                                         Toast.makeText(RegistrasiKomunitas.this, "Registration failed", Toast.LENGTH_SHORT).show();
@@ -143,14 +143,14 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
                     }
                 });
     }
-    
+
     private void sendEmailVerifKomunitas() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         user.sendEmailVerification()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             //email is sent. log out the user and finish this activity
                             firebaseAuthKomunitas.signOut();
                             Toast.makeText(RegistrasiKomunitas.this, getString(R.string.succeed_register), Toast.LENGTH_SHORT).show();
@@ -160,7 +160,7 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
                             //email not sent and restart this activity
                             overridePendingTransition(0, 0);
                             finish();
-                            overridePendingTransition(0,0);
+                            overridePendingTransition(0, 0);
                             startActivity(getIntent());
                         }
                     }
@@ -170,7 +170,7 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.button_regiskomunitas){
+        if (v.getId() == R.id.button_regiskomunitas) {
             registerKomunitas();
         }
     }

@@ -15,7 +15,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import pnj.ac.id.foodless.Fragment.HomeKomunitasFragment;
 import pnj.ac.id.foodless.R;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
@@ -25,11 +28,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
 
+    private FirebaseDatabase database;
+    private DatabaseReference getReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
+
     }
 
     private void init() {
@@ -103,15 +109,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             finish();
             Toast.makeText(Login.this, "Successfully logged in", Toast.LENGTH_LONG).show();
 
-            Intent i = new Intent(Login.this, MainActivity.class);
-            startActivity(i);
+                Intent i = new Intent(Login.this, HomeKomunitasFragment.class);
+                startActivity(i);
             finish();
         } else if (!user.isEmailVerified()) {
             Toast.makeText(Login.this, "Email is not verified", Toast.LENGTH_LONG).show();
             FirebaseAuth.getInstance().signOut();
         } else {
             Toast.makeText(Login.this, "An error occured. Please try again", Toast.LENGTH_SHORT).show();
-
         }
 
         }

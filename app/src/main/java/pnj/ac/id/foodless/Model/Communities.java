@@ -78,7 +78,14 @@ public class Communities {
     }
 
     public Communities(String namaKomunitas, String alamatKomunitas, String notelpKomunitas, String emailKomunitas, String passKomunitas, String jumlah_memberKomunitas){
-
+        this.nama_komunitas = namaKomunitas;
+        this.jenis_kegiatan = jenis_kegiatan;
+        this.gambar_komunitas = gambar_komunitas;
+        this.notelp_komunitas = notelpKomunitas;
+        this.alamat_komunitas = alamatKomunitas;
+        this.email_komunitas = emailKomunitas;
+        this.password_komunitas = passKomunitas;
+        this.jumlah_member = jumlah_memberKomunitas;
     }
 
     public Communities(){

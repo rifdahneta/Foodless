@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import pnj.ac.id.foodless.Activity.DetailActivity;
@@ -37,7 +38,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView rcy_komunitas;
     private View HomeView;
 
-    private DatabaseReference KomunitasRef;
+
     private FirebaseAuth mAuth;
     //private String currentUserID;
 
@@ -60,7 +61,6 @@ public class HomeFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
         //currentUserID = mAuth.getCurrentUser().getUid();
-        KomunitasRef = FirebaseDatabase.getInstance().getReference().child("komunitas");
         initData();
     }
 
@@ -82,43 +82,61 @@ public class HomeFragment extends Fragment {
     }
 
     public void initData() {
+         DatabaseReference KomunitasRef = FirebaseDatabase.getInstance().getReference().child("komunitas");
+         KomunitasRef.orderByChild("nama_komunitas").startAt("Garda").endAt("Garda"+"\uf8ff");
+        Query query = KomunitasRef;
+        query.orderByChild("nama_komunitas").startAt("tes").endAt("tes"+"\uf8ff");
+
+
         FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Communities>()
-                .setQuery(KomunitasRef, Communities.class)
+                .setQuery(query, Communities.class)
                 .build();
 
-
+//        KomunitasRef.orderByChild("nama_komunitas").startAt("Garda").endAt("Garda"+"\uf8ff").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Log.e("datachange", ""+model.getNama_komunitas());
+//
+//
+////                        String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
+////                        String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
+////                        String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
+////
+////                        holder.mJudul.setText(judul);
+////                        holder.mDesc.setText(desc);
+////
+////                        Log.e("image", image);
+////                        Glide.with(getActivity())
+////                                .load(image)
+////                                .override(150, 150)
+////                                .into(holder.mImage);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
         FirebaseRecyclerAdapter<Communities, RecyclerViewHolder> adapter
                 = new FirebaseRecyclerAdapter<Communities, RecyclerViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position, @NonNull Communities model) {
-                String userIDs = getRef(position).getKey();
-                KomunitasRef.child(userIDs).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
-                        String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
-                        String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
+            protected void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position, @NonNull final Communities model) {
 
-                        holder.mJudul.setText(judul);
-                        holder.mDesc.setText(desc);
 
-                        Log.e("image", image);
-                        Glide.with(getActivity())
-                                .load(image)
-                                .override(150, 150)
-                                .into(holder.mImage);
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                holder.mJudul.setText(model.getNama_komunitas());
+                holder.mDesc.setText(model.getJenis_kegiatan());
 
-                    }
-                });
-
+                Log.e("image","tes="+ model.getNama_komunitas());
+                Glide.with(getActivity())
+                        .load(model.getGambar_komunitas())
+                        .override(150, 150)
+                        .into(holder.mImage);
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String communities_detail = getRef(position).getKey();
+
 
                         Intent detailIntent = new Intent(HomeFragment.this.getActivity(), DetailActivity.class);
                         detailIntent.putExtra("communities_detail", communities_detail);
@@ -136,6 +154,8 @@ public class HomeFragment extends Fragment {
                 RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
                 return viewHolder;
             }
+
+
         };
 
         rcy_komunitas.setAdapter(adapter);

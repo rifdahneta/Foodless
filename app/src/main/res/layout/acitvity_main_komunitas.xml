@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,6 +14,13 @@
         tools:context=".Activity.MainActivityKomunitas"
         >
 
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="main activity komunitas"
+            />
         <FrameLayout
             android:id="@+id/main_frame_komunitas"
             android:layout_above="@id/main_nav_komunitas"
@@ -28,9 +35,9 @@
             android:layout_height="56dp"
             android:layout_alignParentBottom="true"
             app:menu="@menu/navigation_item_komunitas"
-            android:backgroundTint="@color/putih"
+            android:background="@color/putih"
             >
         </android.support.design.widget.BottomNavigationView>
 
     </android.support.constraint.ConstraintLayout>
-</RelativeLayout>
+</FrameLayout>

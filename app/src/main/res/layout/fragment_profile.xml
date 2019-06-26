@@ -7,13 +7,14 @@
     tools:context=".Fragment.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile fragment" />
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/atas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/topBg"
             android:layout_width="match_parent"
@@ -34,13 +35,26 @@
             app:layout_constraintBottom_toBottomOf="@id/topBg"
             android:src="@drawable/ic_profile"
             />
+    </android.support.constraint.ConstraintLayout>
+
+        <ScrollView
+            app:layout_constraintTop_toBottomOf="@id/atas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/bawah"
+            app:layout_constraintTop_toBottomOf="@id/atas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
         <TextView
+            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/fullNameProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/topBg"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
@@ -94,7 +108,7 @@
         <TextView
             android:id="@+id/text_logout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/questrial"
             android:text="@string/logout"
@@ -103,6 +117,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addressProfile" />
+        </android.support.constraint.ConstraintLayout>
+        </ScrollView>
     </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>
