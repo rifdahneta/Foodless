@@ -14,6 +14,8 @@ public class Communities {
     public Communities(String namaKomunitas, String alamatKomunitas, String notelpKomunitas, String emailKomunitas, String passKomunitas, String jmlMemberKomunitas) {
     }
 
+
+
     public String getNama_komunitas() {
 
         return nama_komunitas;
@@ -88,21 +90,31 @@ public class Communities {
         this.jmlmember_komunitas = jmlmember_komunitas;
     }
 
+//    public Communities(){
+//
+//    }
+//
+//
+//    public Communities(String nama_komunitas, String jenis_kegiatan, String gambar_komunitas,
+//                       String alamat_komunitas, String notelp_komunitas, String email_komunitas,
+//                       String jmlmember_komunitas, String password_komunitas)
+//    {
+
     public Communities(){
 
     }
 
-    public Communities(String nama_komunitas, String jenis_kegiatan, String gambar_komunitas,
-                       String alamat_komunitas, String notelp_komunitas, String email_komunitas,
-                       String jmlmember_komunitas, String password_komunitas)
-    {
+    public Communities(String nama_komunitas, String jenis_kegiatan, String gambar_komunitas, String notelp_komunitas, String alamat_komunitas, String email_komunitas, String password_komunitas, String jumlah_member) {
+
         this.nama_komunitas = nama_komunitas;
         this.jenis_kegiatan = jenis_kegiatan;
         this.gambar_komunitas = gambar_komunitas;
-        this.alamat_komunitas = alamat_komunitas;
         this.notelp_komunitas = notelp_komunitas;
         this.jmlmember_komunitas = jmlmember_komunitas;
         this.password_komunitas = password_komunitas;
+        this.alamat_komunitas = alamat_komunitas;
         this.email_komunitas = email_komunitas;
+        this.password_komunitas = password_komunitas;
     }
+
 }

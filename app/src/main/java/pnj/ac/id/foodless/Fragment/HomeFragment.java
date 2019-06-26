@@ -27,10 +27,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
-import pnj.ac.id.foodless.DetailActivity;
+import pnj.ac.id.foodless.Activity.DetailActivity;
 import pnj.ac.id.foodless.Model.Communities;
 import pnj.ac.id.foodless.R;
 
@@ -56,7 +54,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        rcy_komunitas = (RecyclerView) HomeView.findViewById(R.id.rcy_komunitas);
+        rcy_komunitas =  HomeView.findViewById(R.id.rcy_komunitas);
         rcy_komunitas.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
 
@@ -97,19 +95,19 @@ public class HomeFragment extends Fragment {
                 KomunitasRef.child(userIDs).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
-                            String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
-                            String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
+                        String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
+                        String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
+                        String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
 
-                            holder.mJudul.setText(judul);
-                            holder.mDesc.setText(desc);
+                        holder.mJudul.setText(judul);
+                        holder.mDesc.setText(desc);
 
-                            Log.e("image", image);
-                            Glide.with(getActivity())
-                                    .load(image)
-                                    .override(150, 150)
-                                    .into(holder.mImage);
-                        }
+                        Log.e("image", image);
+                        Glide.with(getActivity())
+                                .load(image)
+                                .override(150, 150)
+                                .into(holder.mImage);
+                    }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {

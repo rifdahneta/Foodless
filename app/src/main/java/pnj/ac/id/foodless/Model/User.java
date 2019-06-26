@@ -12,7 +12,7 @@ public class User {
 
     }
 
-    public User (String full_name, String address, String phone, String email, String password){
+    public User(String full_name, String address, String phone, String email, String password) {
         this.full_name = full_name;
         this.address = address;
         this.phone = phone;

@@ -17,13 +17,9 @@
 
         <activity android:name=".Activity.userProfile"></activity>
 
-        <activity
-            android:name="pnj.ac.id.foodless2.DetailOrder"
-            android:label="@string/title_activity_detail_order"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Activity.RegistrasiKomunitas" />
         <activity android:name=".Activity.ChooseRegister" />
-        <activity android:name=".DetailActivity" />
+        <activity android:name=".Activity.DetailActivity" />
         <activity
             android:name=".Activity.SplashScreen"
             tools:ignore="InnerclassSeparator">
