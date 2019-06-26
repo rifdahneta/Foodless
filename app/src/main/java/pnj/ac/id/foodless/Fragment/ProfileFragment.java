@@ -25,6 +25,7 @@ import pnj.ac.id.foodless.Activity.Form;
 import pnj.ac.id.foodless.Activity.Login;
 import pnj.ac.id.foodless.CurrentUser;
 import pnj.ac.id.foodless.DetailActivity;
+import pnj.ac.id.foodless.Model.FormModel;
 import pnj.ac.id.foodless.R;
 import pnj.ac.id.foodless.User;
 
@@ -81,6 +82,7 @@ public class ProfileFragment extends Fragment {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             User user = dataSnapshot.getValue(User.class);
+
                             CurrentUser.full_name = user.getFullName();
                             CurrentUser.email = user.getEmail();
                             CurrentUser.address = user.getAddress();

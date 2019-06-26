@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         setFragment(homefragment);
                         break;
 
-                    case R.id.btnfoodfact:
+                    case R.id.btnnotification:
                         setFragment(foodfactfragment);
                         break;
 

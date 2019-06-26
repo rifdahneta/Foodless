@@ -7,9 +7,9 @@
         android:icon="@drawable/buttonhome"
         android:title="@string/home" />
     <item
-        android:id="@+id/btnfoodfact"
-        android:icon="@drawable/foodfact"
-        android:title="@string/food_fact" />
+        android:id="@+id/btnnotification"
+        android:icon="@drawable/notif"
+        android:title="@string/notification" />
     <item
         android:id="@+id/btnhistory"
         android:icon="@drawable/buttonhistory"

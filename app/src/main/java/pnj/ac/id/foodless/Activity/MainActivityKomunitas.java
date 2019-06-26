@@ -42,7 +42,7 @@ public class MainActivityKomunitas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_komunitas);
+        setContentView(R.layout.acitvity_main_komunitas);
 
         mainNavKomunitas = findViewById(R.id.main_nav_komunitas);
         mainFrameKomunitas = findViewById(R.id.main_frame_komunitas);
@@ -57,15 +57,15 @@ public class MainActivityKomunitas extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 switch(menuItem.getItemId()){
-                    case R.id.btnHome:
+                    case R.id.btnHomeKomunitas:
                         setFragment(HomeFragmentKomunitas);
                         break;
 
-                    case R.id.btnhistory:
+                    case R.id.btnhistoryKomunitas:
                         setFragment(HistoryKomunitasFragment);
                         break;
 
-                    case R.id.btnfprofile:
+                    case R.id.btnfprofileKomunitas:
                         setFragment(ProfileKomunitasFragment);
                         break;
 

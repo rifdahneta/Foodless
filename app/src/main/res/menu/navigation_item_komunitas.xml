@@ -8,7 +8,7 @@
     <item
         android:id="@+id/btnhistoryKomunitas"
         android:icon="@drawable/buttonhistory"
-        android:title="@string/history" />
+        android:title="Riwayat" />
     <item
         android:id="@+id/btnfprofileKomunitas"
         android:icon="@drawable/buttonprofile"

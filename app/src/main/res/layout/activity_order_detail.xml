@@ -195,6 +195,7 @@
         >
 
         <Button
+            android:id="@+id/btnAccept"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -206,6 +207,7 @@
             android:backgroundTint="@color/putih"
             />
         <Button
+            android:id="@+id/btnDecline"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:layout_width="0dp"

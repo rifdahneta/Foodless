@@ -28,7 +28,7 @@
             android:layout_height="56dp"
             android:layout_alignParentBottom="true"
             app:menu="@menu/navigation_item_komunitas"
-            android:backgroundTint="@color/putih"
+            android:background="@color/putih"
             >
         </android.support.design.widget.BottomNavigationView>
 
