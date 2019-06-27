@@ -39,7 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pnj.ac.id.foodless.Adapter.CustomSearchAdapter;
-import pnj.ac.id.foodless.DetailActivity;
+import pnj.ac.id.foodless.Activity.DetailActivity;
 
 import pnj.ac.id.foodless.Model.Communities;
 import pnj.ac.id.foodless.R;

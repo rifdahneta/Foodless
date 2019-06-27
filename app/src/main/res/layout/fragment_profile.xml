@@ -7,20 +7,14 @@
     tools:context=".Fragment.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <android.support.constraint.ConstraintLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <android.support.constraint.ConstraintLayout
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/atas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -46,75 +40,72 @@
             android:src="@drawable/ic_profile"
             />
     </android.support.constraint.ConstraintLayout>
-
         <ScrollView
-            app:layout_constraintTop_toBottomOf="@id/atas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-        <android.support.constraint.ConstraintLayout
-            android:id="@+id/bawah"
-            app:layout_constraintTop_toBottomOf="@id/atas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/bawah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/atas">
+
+
 
         <TextView
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/fullNameProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
-            android:text="@string/full_name"
-            android:textSize="20sp"
-            android:textColor="@color/hitam"
             android:fontFamily="@font/questrial"
-            />
+            android:text="@string/full_name"
+            android:textColor="@color/hitam"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/emailProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/fullNameProfile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
-            android:text="@string/email"
-            android:textSize="20sp"
-            android:textColor="@color/hitam"
             android:fontFamily="@font/questrial"
-            />
+            android:text="@string/email"
+            android:textColor="@color/hitam"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fullNameProfile" />
 
         <TextView
             android:id="@+id/phoneProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/emailProfile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
-            android:text="@string/phone_number"
-            android:textSize="20sp"
-            android:textColor="@color/hitam"
             android:fontFamily="@font/questrial"
-            />
+            android:text="@string/phone_number"
+            android:textColor="@color/hitam"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailProfile" />
 
         <TextView
             android:id="@+id/addressProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/phoneProfile"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="40dp"
-            android:text="@string/address"
-            android:textSize="20sp"
-            android:textColor="@color/hitam"
             android:fontFamily="@font/questrial"
-            />
+            android:text="@string/address"
+            android:textColor="@color/hitam"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phoneProfile" />
+
         <TextView
             android:id="@+id/text_logout"
             android:layout_width="wrap_content"
@@ -127,9 +118,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addressProfile" />
-        </android.support.constraint.ConstraintLayout>
-        </ScrollView>
     </android.support.constraint.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
 
-    </ScrollView>
+
+
 </FrameLayout>
