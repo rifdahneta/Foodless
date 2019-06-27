@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/txtJudulBerita2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JUDUL BERITA"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/hijau"
+        />
+
+    <ImageView
+        android:id="@+id/imgBerita2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/txtJudulBerita2"
+        android:background="@color/hitam"
+        />
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/imgBerita2"
+        android:id="@+id/txtIsiBerita2"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lorem ipsum"
+        android:textSize="15sp"
+        android:textColor="@color/hitam"
+        />
+
+</android.support.constraint.ConstraintLayout>

@@ -10,23 +10,14 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".Activity.MainApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
-  
-        <activity android:name=".RegistrasiKomunitas" />
-        <activity android:name=".Activity.ChooseRegister" />
-        <activity android:name=".DetailActivity" />
-        <activity
-            android:name=".Activity.SplashScreen"
-            tools:ignore="InnerclassSeparator">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Activity.OrderDetail"></activity>
+        <activity android:name=".Activity.MainActivityKomunitas" />
         <activity
             android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator" />
@@ -39,6 +30,20 @@
         <activity
             android:name=".Activity.Form"
             tools:ignore="InnerclassSeparator" />
+
+        <activity android:name=".RegistrasiKomunitas" />
+        <activity android:name=".Activity.ChooseRegister" />
+        <activity android:name=".DetailActivity" />
+        <activity
+            android:name=".Activity.SplashScreen"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

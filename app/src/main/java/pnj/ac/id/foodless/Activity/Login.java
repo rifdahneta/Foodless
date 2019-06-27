@@ -78,6 +78,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     {
                         Toast.makeText(Login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                     } else {
+                        MainApp.sharedPreferences.edit().putBoolean("isLogin",true).commit();
                         checkIfEmailVerified();
                     }
                 }
@@ -86,7 +87,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         if (v.getId()== R.id.buttonlog_register)
         {
-            Intent i = new Intent (Login.this, Register.class);
+            Intent i = new Intent (Login.this, ChooseRegister.class);
             startActivity(i);
 
         }

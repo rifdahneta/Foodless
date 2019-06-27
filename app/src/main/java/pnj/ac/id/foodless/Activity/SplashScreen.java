@@ -33,9 +33,17 @@ public class SplashScreen extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                Intent intent = new Intent(SplashScreen.this, Login.class);
-                startActivity(intent);
-                finish();
+                if(MainApp.sharedPreferences.getBoolean("isLogin",false)){
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    Intent intent = new Intent(SplashScreen.this, Login.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+
             }
 
             @Override

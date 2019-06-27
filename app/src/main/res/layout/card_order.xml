@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/card_order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="7dp"
@@ -15,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/txtNamaDonatur"
+                android:id="@+id/txtNamaDonaturCard"
                 android:padding="10dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -28,13 +29,150 @@
                 />
 
             <TextView
+                android:id="@+id/teskategori"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtNamaDonaturCard"
+                android:layout_width="wrap_content"
+                android:text="Kategori :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtJenisDonaturCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="Individu"
                 android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/teskategori"
+                app:layout_constraintTop_toBottomOf="@id/txtNamaDonaturCard" />
+
+            <TextView
+                android:id="@+id/tesjenismakanan"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtNamaDonatur" />
+                app:layout_constraintTop_toBottomOf="@id/teskategori"
+                android:layout_width="wrap_content"
+                android:text="Jenis Makanan :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtJenisMakananCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Jenis Makanan"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/tesjenismakanan"
+                app:layout_constraintTop_toBottomOf="@id/txtJenisDonaturCard" />
+
+            <TextView
+                android:id="@+id/tesporsi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tesjenismakanan"
+                android:layout_width="wrap_content"
+                android:text="Porsi :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtPorsiCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Porsi"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/tesporsi"
+                app:layout_constraintTop_toBottomOf="@id/txtJenisMakananCard"/>
+
+            <TextView
+                android:id="@+id/teskadaluarsa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tesporsi"
+                android:layout_width="wrap_content"
+                android:text="Kadaluarsa :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtKadaluarsaCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Kadaluarsa"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/teskadaluarsa"
+                app:layout_constraintTop_toBottomOf="@id/txtPorsiCard"/>
+
+            <TextView
+                android:id="@+id/tesketerangan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/teskadaluarsa"
+                android:layout_width="wrap_content"
+                android:text="Keterangan :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtKeteranganCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Keterangan"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/tesketerangan"
+                app:layout_constraintTop_toBottomOf="@id/txtKadaluarsaCard"/>
+
+            <TextView
+                android:id="@+id/testelepon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tesketerangan"
+                android:layout_width="wrap_content"
+                android:text="No. Telepon :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txtTeleponCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Telepon"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/testelepon"
+                app:layout_constraintTop_toBottomOf="@id/txtKeteranganCard"/>
+
+            <TextView
+                android:id="@+id/tesemail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/testelepon"
+                android:layout_width="wrap_content"
+                android:text="Email :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtEmailCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Email"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/tesemail"
+                app:layout_constraintTop_toBottomOf="@id/txtTeleponCard"/>
+
+            <TextView
+                android:id="@+id/tesalamat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tesemail"
+                android:layout_width="wrap_content"
+                android:text="Alamat :"
+                android:padding="10dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txtAlamatCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Alamat"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/tesalamat"
+                app:layout_constraintTop_toBottomOf="@id/txtEmailCard"/>
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
