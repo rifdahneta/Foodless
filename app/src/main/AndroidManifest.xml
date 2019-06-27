@@ -14,17 +14,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
 
-
         <activity android:name=".Activity.userProfile"/>
 
         <activity android:name=".Activity.RegistrasiKomunitas" />
 
-        <activity android:name=".Activity.OrderDetail"></activity>
+        <activity android:name=".Activity.OrderDetail"/>
         <activity android:name=".Activity.MainActivityKomunitas" />
-
-
-        <activity android:name=".RegistrasiKomunitas" />
-
         <activity android:name=".Activity.ChooseRegister" />
         <activity android:name=".Activity.DetailActivity" />
         <activity
@@ -50,13 +45,7 @@
             android:name=".Activity.Form"
             tools:ignore="InnerclassSeparator" />
 
-        <service
-            android:name=".Notification.MyFirebaseMessagingService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+
 
     </application>
 
