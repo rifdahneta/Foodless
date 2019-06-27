@@ -14,6 +14,4 @@ public class MainApp extends Application {
         super.onCreate();
         sharedPreferences = getSharedPreferences("setting", MODE_PRIVATE);
     }
-
-
 }
