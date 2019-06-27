@@ -99,6 +99,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     if (!task.isSuccessful()) {
                         Toast.makeText(Login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                     } else {
+                        MainApp.sharedPreferences.edit().putBoolean("isLogin",true).commit();
                         checkIfEmailVerified();
                     }
                 }
