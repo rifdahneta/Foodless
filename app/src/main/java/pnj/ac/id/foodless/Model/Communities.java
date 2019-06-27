@@ -12,6 +12,16 @@ public class Communities {
     private String jumlah_member;
 
 
+    public String getRefId() {
+        return refId;
+    }
+
+    public void setRefId(String refId) {
+        this.refId = refId;
+    }
+
+    private String refId;
+
 
     public String getNama_komunitas() {
         return nama_komunitas;

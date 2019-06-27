@@ -32,7 +32,7 @@ import pnj.ac.id.foodless.R;
 import static android.support.constraint.Constraints.TAG;
 
 
-public class ProfileFragment extends Fragment {
+public class    ProfileFragment extends Fragment {
 
     private TextView fullname, emailUser, addressUser, no_phoneUser, logout;
     private View ProfileView;
