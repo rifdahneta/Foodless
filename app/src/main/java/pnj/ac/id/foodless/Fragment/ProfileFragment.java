@@ -21,14 +21,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Objects;
 
-import pnj.ac.id.foodless.Activity.Form;
 import pnj.ac.id.foodless.Activity.Login;
 import pnj.ac.id.foodless.Activity.MainApp;
 import pnj.ac.id.foodless.CurrentUser;
 import pnj.ac.id.foodless.DetailActivity;
 import pnj.ac.id.foodless.Model.FormModel;
+import pnj.ac.id.foodless.Model.User;
 import pnj.ac.id.foodless.R;
-import pnj.ac.id.foodless.User;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -55,7 +54,7 @@ public class    ProfileFragment extends Fragment {
         emailUser = ProfileView.findViewById(R.id.emailProfile);
         addressUser = ProfileView.findViewById(R.id.addressProfile);
         no_phoneUser = ProfileView.findViewById(R.id.phoneProfile);
-        logout = ProfileView.findViewById(R.id.text_logout);
+        logout = ProfileView.findViewById(R.id.btnLogout);
 
         getUserDetail();
 

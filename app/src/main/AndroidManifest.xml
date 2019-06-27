@@ -16,10 +16,25 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
 
+
+        <activity android:name=".Activity.userProfile"></activity>
+
+        <activity android:name=".Activity.RegistrasiKomunitas" />
+        <activity android:name=".Activity.ChooseRegister" />
+        <activity android:name=".Activity.DetailActivity" />
+        <activity
+            android:name=".Activity.SplashScreen"
+            tools:ignore="InnerclassSeparator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
         <activity android:name=".Activity.OrderDetail"></activity>
         <activity android:name=".Activity.MainActivityKomunitas" />
         <activity
             android:name=".Activity.MainActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activity.MainActivityKomunitas"
             tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".Activity.Register"

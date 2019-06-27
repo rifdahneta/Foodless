@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".Activity.Register"
     android:theme="@style/FormLayout"
     android:background="@color/putih">
@@ -45,6 +45,15 @@
                 android:layout_gravity="center"
                 android:src="@drawable/image1" />
 
+            <ProgressBar
+                android:id="@+id/progress_regis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                />
+
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,44 +72,44 @@
                     android:textColor="@color/bgcolor"
                     android:textColorHint="@color/bgcolor" />
             </android.support.design.widget.TextInputLayout>
-            <RadioGroup
-                android:id="@+id/radioJenisUser"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="10dp">
 
-                <TextView
-                    android:id="@+id/jenisUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Jenis User"
-                    android:textColor="@color/bgcolor"
-                    android:textSize="20sp"/>
+            <!--<RadioGroup-->
+                <!--android:id="@+id/radioJenisUser"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_marginRight="16dp"-->
+                <!--android:layout_marginBottom="10dp">-->
 
-                <RadioButton
-                    android:id="@+id/radioDonatur"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/bgcolor"
-                    android:text="@string/donatur"
-                    android:textColor="@color/bgcolor"
-                    android:textSize="18sp"/>
+                    <!--<TextView-->
+                        <!--android:id="@+id/jenisUser"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Jenis User"-->
+                        <!--android:textColor="@color/bgcolor"-->
+                        <!--android:textSize="20sp"/>-->
 
-                <RadioButton
-                    android:id="@+id/radioKomunitas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:buttonTint="@color/bgcolor"
-                    android:text="@string/komunitas"
-                    android:textColor="@color/bgcolor"
-                    android:textSize="18sp"/>
-            </RadioGroup>
+                    <!--<RadioButton-->
+                    <!--android:id="@+id/radioDonatur"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:buttonTint="@color/bgcolor"-->
+                    <!--android:text="@string/donatur"-->
+                    <!--android:textColor="@color/bgcolor"-->
+                    <!--android:textSize="18sp"/>-->
 
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radioKomunitas"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:buttonTint="@color/bgcolor"-->
+                    <!--android:text="@string/komunitas"-->
+                    <!--android:textColor="@color/bgcolor"-->
+                    <!--android:textSize="18sp"/>-->
+            <!--</RadioGroup>-->
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -193,8 +202,9 @@
                 android:backgroundTint="@color/bgcolor"
                 android:textColor="@color/putih"
                 />
+
             <Button
-                android:id="@+id/button_login"
+                android:id="@+id/button_loginreg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -208,13 +218,6 @@
                 android:textSize="16sp"
                 android:background="@drawable/background_btn_rounded"/>
 
-            <ProgressBar
-                android:id="@+id/progress_regis"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:visibility="gone"
-                />
 
         </LinearLayout>
     </ScrollView>

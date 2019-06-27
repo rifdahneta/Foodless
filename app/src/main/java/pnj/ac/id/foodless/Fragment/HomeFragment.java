@@ -37,6 +37,8 @@ import java.util.List;
 
 import pnj.ac.id.foodless.Adapter.CustomSearchAdapter;
 import pnj.ac.id.foodless.DetailActivity;
+import pnj.ac.id.foodless.Activity.DetailActivity;
+
 import pnj.ac.id.foodless.Model.Communities;
 import pnj.ac.id.foodless.R;
 
@@ -66,7 +68,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        rcy_komunitas = (RecyclerView) HomeView.findViewById(R.id.rcy_komunitas);
+        rcy_komunitas =  HomeView.findViewById(R.id.rcy_komunitas);
         rcy_komunitas.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
 
@@ -164,8 +166,48 @@ public class HomeFragment extends Fragment {
         super.onStart();
     }
 
+
     private void getSearch(final String query) {
         final ArrayList<Communities> dataSearch = new ArrayList<>();
+
+        FirebaseRecyclerAdapter<Communities, RecyclerViewHolder> adapter
+                = new FirebaseRecyclerAdapter<Communities, RecyclerViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position, @NonNull Communities model) {
+                String userIDs = getRef(position).getKey();
+                KomunitasRef.child(userIDs).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
+                        String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
+                        String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
+
+                        holder.mJudul.setText(judul);
+                        holder.mDesc.setText(desc);
+
+                        Log.e("image", image);
+                        Glide.with(getActivity())
+                                .load(image)
+                                .override(150, 150)
+                                .into(holder.mImage);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String communities_detail = getRef(position).getKey();
+
+                        Intent detailIntent = new Intent(HomeFragment.this.getActivity(), DetailActivity.class);
+                        detailIntent.putExtra("communities_detail", communities_detail);
+                        startActivity(detailIntent);
+                    }
+                });
 
 
         DatabaseReference datas = FirebaseDatabase.getInstance().getReference().child("komunitas");
