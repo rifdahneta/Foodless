@@ -98,6 +98,5 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
             }
         });
     }
-
-    private void getOrderInfo(final TextView nama, TextView )
+    
 }
