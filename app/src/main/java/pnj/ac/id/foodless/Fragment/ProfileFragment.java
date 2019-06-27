@@ -80,7 +80,7 @@ public class    ProfileFragment extends Fragment {
             retriveUser.child(Objects.requireNonNull(FirebaseAuth.getInstance()).getCurrentUser().getUid())
                     .addValueEventListener(new ValueEventListener() {
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        public void onDataChange(DataSnapshot dataSnapshot) {
                             User user = dataSnapshot.getValue(User.class);
 
                             CurrentUser.full_name = user.getFullName();

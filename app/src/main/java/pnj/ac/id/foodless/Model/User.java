@@ -9,9 +9,7 @@ public class User {
     private String password;
     private String roleUser;
 
-    public User(String fullName, String alamat, String phoneNo, String eMail, String pass){
 
-    }
 
     public User(){
 
@@ -29,7 +27,7 @@ public class User {
         return full_name;
     }
 
-    public void setFullName(String full_name){
+    public void setFullName(){
         this.full_name = full_name;
     }
 
@@ -70,4 +68,7 @@ public class User {
     }
     public void setRoleUser(String roleUser) {
         this.roleUser = roleUser;
-    }}
+    }
+
+
+}
