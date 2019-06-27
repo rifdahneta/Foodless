@@ -45,12 +45,6 @@ public class HomeKomunitasFragment extends Fragment {
     private DatabaseReference DonasiRef;
     private FirebaseAuth mAuth;
 
-    public static String namaDonatur;
-    public static String jenis;
-    public static String kadaluarsa;
-    public static String porsi;
-    public static String alamat;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
