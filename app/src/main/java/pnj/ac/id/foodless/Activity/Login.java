@@ -112,12 +112,12 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void checkIfEmailVerified() {
-
+        //email is verified and then check the role of the user
         if (spinnerRole.getSelectedItem().toString().equalsIgnoreCase("Donatur")) {
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             assert user != null;
             if (user.isEmailVerified()) {
-                //email verified, proceed to finish this activity
+
                 finish();
                 Toast.makeText(Login.this, "Successfully logged in", Toast.LENGTH_LONG).show();
 

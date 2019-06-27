@@ -51,7 +51,7 @@ public class ProfileFragment extends Fragment {
         emailUser = ProfileView.findViewById(R.id.emailProfile);
         addressUser = ProfileView.findViewById(R.id.addressProfile);
         no_phoneUser = ProfileView.findViewById(R.id.phoneProfile);
-        logout = ProfileView.findViewById(R.id.text_logout);
+        logout = ProfileView.findViewById(R.id.btnLogout);
 
         getUserDetail();
 
