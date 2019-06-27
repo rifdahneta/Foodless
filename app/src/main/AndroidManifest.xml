@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="pnj.ac.id.foodless">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -14,12 +15,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,ExtraText,GoogleAppIndexingWarning">
 
-        <activity android:name=".Activity.userProfile"/>
-
         <activity android:name=".Activity.RegistrasiKomunitas" />
-
-        <activity android:name=".Activity.OrderDetail"/>
-        <activity android:name=".Activity.MainActivityKomunitas" />
         <activity android:name=".Activity.ChooseRegister" />
         <activity android:name=".Activity.DetailActivity" />
         <activity
@@ -31,7 +27,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator" />
@@ -44,9 +39,6 @@
         <activity
             android:name=".Activity.Form"
             tools:ignore="InnerclassSeparator" />
-
-
-
     </application>
 
 </manifest>
