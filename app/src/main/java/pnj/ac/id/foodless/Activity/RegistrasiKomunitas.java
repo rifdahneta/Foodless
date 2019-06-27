@@ -121,10 +121,11 @@ public class RegistrasiKomunitas extends AppCompatActivity implements View.OnCli
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+
                             Communities user = new Communities(namaKomunitas, alamatKomunitas, notelpKomunitas,
                                     emailKomunitas, passKomunitas, jmlMemberKomunitas);
 
-                            FirebaseDatabase.getInstance().getReference("Communities")
+                            FirebaseDatabase.getInstance().getReference("komunitas")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
