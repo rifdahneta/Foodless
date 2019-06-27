@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    
+
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,7 +28,7 @@
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation_items"
-        android:backgroundTint="@color/putih"
+        android:background="@color/putih"
         >
     </android.support.design.widget.BottomNavigationView>
 
