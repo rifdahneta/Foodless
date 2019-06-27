@@ -19,7 +19,7 @@ import java.util.Objects;
 import pnj.ac.id.foodless.CurrentUser;
 import pnj.ac.id.foodless.Model.FormModel;
 import pnj.ac.id.foodless.R;
-import pnj.ac.id.foodless.User;
+import pnj.ac.id.foodless.Model.User;
 
 public class OrderDetail extends AppCompatActivity {
     private TextView txtNamaDonatur, txtJenisDonatur, txtKadaluarsaDetail, txtPorsi, txtAlamat;

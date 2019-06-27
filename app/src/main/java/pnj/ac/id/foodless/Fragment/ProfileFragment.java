@@ -24,7 +24,7 @@ import java.util.Objects;
 import pnj.ac.id.foodless.Activity.Login;
 import pnj.ac.id.foodless.Activity.MainApp;
 import pnj.ac.id.foodless.CurrentUser;
-import pnj.ac.id.foodless.DetailActivity;
+import pnj.ac.id.foodless.Activity.DetailActivity;
 import pnj.ac.id.foodless.Model.FormModel;
 import pnj.ac.id.foodless.Model.User;
 import pnj.ac.id.foodless.R;

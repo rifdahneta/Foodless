@@ -61,7 +61,6 @@
 
     <string name="nama_komunitas">Community Name</string>
 
-    <string name="alamat">Alamat</string>
 
     <string-array name="roleUser">
         <item>Donatur</item>

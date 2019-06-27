@@ -22,14 +22,8 @@
         <activity android:name=".Activity.RegistrasiKomunitas" />
         <activity android:name=".Activity.ChooseRegister" />
         <activity android:name=".Activity.DetailActivity" />
-        <activity
-            android:name=".Activity.SplashScreen"
-            tools:ignore="InnerclassSeparator">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activity.OrderDetail"/>
 
-        <activity android:name=".Activity.OrderDetail"></activity>
-        <activity android:name=".Activity.MainActivityKomunitas" />
         <activity
             android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator" />
@@ -46,9 +40,6 @@
             android:name=".Activity.Form"
             tools:ignore="InnerclassSeparator" />
 
-        <activity android:name=".RegistrasiKomunitas" />
-        <activity android:name=".Activity.ChooseRegister" />
-        <activity android:name=".DetailActivity" />
         <activity
             android:name=".Activity.SplashScreen"
             tools:ignore="InnerclassSeparator">

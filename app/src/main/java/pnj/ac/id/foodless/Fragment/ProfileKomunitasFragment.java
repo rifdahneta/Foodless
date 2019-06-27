@@ -1,7 +1,5 @@
 package pnj.ac.id.foodless.Fragment;
 
-
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;

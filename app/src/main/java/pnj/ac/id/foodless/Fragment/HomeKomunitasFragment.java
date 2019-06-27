@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 import pnj.ac.id.foodless.Activity.Form;
 import pnj.ac.id.foodless.Adapter.CardOrderAdapter;
-import pnj.ac.id.foodless.DetailActivity;
+import pnj.ac.id.foodless.Activity.DetailActivity;
 import pnj.ac.id.foodless.Model.Communities;
 import pnj.ac.id.foodless.Model.FormModel;
 import pnj.ac.id.foodless.R;
