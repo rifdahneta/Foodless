@@ -6,6 +6,16 @@ public class Communities {
     private String jenis_kegiatan;
     private String gambar_komunitas;
 
+    public String getRefId() {
+        return refId;
+    }
+
+    public void setRefId(String refId) {
+        this.refId = refId;
+    }
+
+    private String refId;
+
 
     public String getNama_komunitas() {
         return nama_komunitas;

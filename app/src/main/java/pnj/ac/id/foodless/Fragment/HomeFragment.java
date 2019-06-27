@@ -14,32 +14,43 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import pnj.ac.id.foodless.Adapter.CustomSearchAdapter;
 import pnj.ac.id.foodless.DetailActivity;
 import pnj.ac.id.foodless.Model.Communities;
 import pnj.ac.id.foodless.R;
 
 public class HomeFragment extends Fragment {
-
+    private static final String TAG = "HomeFragment";
     private RecyclerView rcy_komunitas;
     private View HomeView;
+    private Button SearchBtn;
+    private EditText InputText;
+    private String SearchInput;
+
 
     private DatabaseReference KomunitasRef;
+
     private FirebaseAuth mAuth;
     //private String currentUserID;
 
@@ -48,7 +59,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         HomeView = inflater.inflate(R.layout.fragment_home, container, false);
-
 
         return HomeView;
     }
@@ -60,87 +70,278 @@ public class HomeFragment extends Fragment {
         rcy_komunitas.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
 
+        SearchBtn = view.findViewById(R.id.searchBtn);
+        InputText = view.findViewById(R.id.search_community);
+
+        SearchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SearchInput = InputText.getText().toString();
+                getSearch(SearchInput);
+//                onStart();
+
+            }
+        });
+
         mAuth = FirebaseAuth.getInstance();
-        //currentUserID = mAuth.getCurrentUser().getUid();
         KomunitasRef = FirebaseDatabase.getInstance().getReference().child("komunitas");
         initData();
     }
 
-    public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    public class RecyclerAdapaterSearch extends RecyclerView.Adapter<RecyclerAdapaterSearch.RecyclerViewHolder> {
+        List<Communities> communities;
 
-        CardView mCardView;
-        TextView mJudul, mDesc;
-        ImageView mImage;
-
-
-        public RecyclerViewHolder(View itemView) {
-            super(itemView);
-
-            mCardView = itemView.findViewById(R.id.card_komunitas);
-            mJudul = itemView.findViewById(R.id.modelJudul);
-            mDesc = itemView.findViewById(R.id.modelDeskripsi);
-            mImage = itemView.findViewById(R.id.modelGambar);
+        public RecyclerAdapaterSearch(List<Communities> communities) {
+            this.communities = communities;
         }
+
+        @NonNull
+        @Override
+        public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+            View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_communities, viewGroup, false);
+            RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
+            return viewHolder;
+
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerViewHolder recyclerViewHolder, int i) {
+            String judul = communities.get(i).getNama_komunitas();
+            String desc = communities.get(i).getJenis_kegiatan();
+            String image = communities.get(i).getGambar_komunitas();
+            final String refID = communities.get(i).getRefId();
+            recyclerViewHolder.mJudul.setText(judul);
+            recyclerViewHolder.mDesc.setText(desc);
+
+            Log.e("image", "" + image);
+            Glide.with(getActivity())
+                    .load("" + image)
+                    .override(150, 150)
+                    .into(recyclerViewHolder.mImage);
+
+            recyclerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String communities_detail = refID;
+
+                    Intent detailIntent = new Intent(HomeFragment.this.getActivity(), DetailActivity.class);
+                    detailIntent.putExtra("communities_detail", communities_detail);
+                    startActivity(detailIntent);
+                }
+            });
+        }
+
+        @Override
+        public int getItemCount() {
+            return communities.size();
+        }
+
+
+        class RecyclerViewHolder extends RecyclerView.ViewHolder {
+            CardView mCardView;
+            TextView mJudul, mDesc;
+            ImageView mImage;
+
+            public RecyclerViewHolder(View itemView) {
+                super(itemView);
+
+                mCardView = itemView.findViewById(R.id.card_komunitas);
+                mJudul = itemView.findViewById(R.id.modelJudul);
+                mDesc = itemView.findViewById(R.id.modelDeskripsi);
+                mImage = itemView.findViewById(R.id.modelGambar);
+            }
+
+        }
+
     }
 
     public void initData() {
-        FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Communities>()
-                .setQuery(KomunitasRef, Communities.class)
-                .build();
+        getSearch("");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    private void getSearch(final String query) {
+        final ArrayList<Communities> dataSearch = new ArrayList<>();
 
 
-        FirebaseRecyclerAdapter<Communities, RecyclerViewHolder> adapter
-                = new FirebaseRecyclerAdapter<Communities, RecyclerViewHolder>(options) {
+        DatabaseReference datas = FirebaseDatabase.getInstance().getReference().child("komunitas");
+        datas.orderByChild("nama_komunitas").startAt(query).endAt(query + "\uf8ff").addValueEventListener(new ValueEventListener() {
             @Override
-            protected void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position, @NonNull Communities model) {
-                String userIDs = getRef(position).getKey();
-                KomunitasRef.child(userIDs).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
-                            String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
-                            String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                            holder.mJudul.setText(judul);
-                            holder.mDesc.setText(desc);
+                for (DataSnapshot val : dataSnapshot.getChildren()) {
+                    Communities item = new Communities();
+                    item.setGambar_komunitas((String) val.child("gambar_komunitas").getValue());
+                    item.setJenis_kegiatan((String) val.child("jenis_kegiatan").getValue());
+                    item.setNama_komunitas((String) val.child("nama_komunitas").getValue());
+                    item.setRefId(val.getKey());
+                    dataSearch.add(item);
+                    //I am not sure what record are you specifically looking for
+                    //This is if you are getting the Key which is the record ID for your Coupon Object
+                    Log.d(TAG, "onDataChange: " + "" + (String) val.child("name").getValue());
 
-                            Log.e("image", image);
-                            Glide.with(getActivity())
-                                    .load(image)
-                                    .override(150, 150)
-                                    .into(holder.mImage);
-                        }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String communities_detail = getRef(position).getKey();
-
-                        Intent detailIntent = new Intent(HomeFragment.this.getActivity(), DetailActivity.class);
-                        detailIntent.putExtra("communities_detail", communities_detail);
-                        startActivity(detailIntent);
-                    }
-                });
-
-
+                }
+                RecyclerAdapaterSearch adapter = new RecyclerAdapaterSearch(dataSearch);
+                rcy_komunitas.setAdapter(adapter);
             }
 
-            @NonNull
             @Override
-            public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_communities, viewGroup, false);
-                RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
-                return viewHolder;
-            }
-        };
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        rcy_komunitas.setAdapter(adapter);
-        adapter.startListening();
+            }
+        });
+
+
     }
 }
+
+
+/**
+ * Query mQuery = FirebaseDatabase.getInstance().getReference().orderByChild("nama_komunitas").startAt(query).endAt(query+"\uf8ff");
+ * mQuery.keepSynced(true);
+ * <p>
+ * FirebaseRecyclerOptions options = new FirebaseRecyclerOptions.Builder<Communities>()
+ * .setQuery(mQuery, Communities.class)
+ * .build();
+ * <p>
+ * FirebaseRecyclerAdapter<Communities, RecyclerViewHolder> adapter
+ * = new FirebaseRecyclerAdapter<Communities, RecyclerViewHolder>(options) {
+ *
+ * @Override protected void onBindViewHolder(@NonNull final RecyclerViewHolder holder, final int position, @NonNull Communities model) {
+ * final String userIDs = getRef(position).getKey();
+ * Log.d(TAG, "onBindViewHolder: coba");
+ * <p>
+ * KomunitasRef.child(userIDs).addValueEventListener(new ValueEventListener() {
+ * @Override public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+ * <p>
+ * //                        for(DataSnapshot val : dataSnapshot.getChildren()){
+ * //                            if(dataSnapshot.child("nama_komunitas").getValue(String.class).contains(query)){
+ * String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
+ * String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
+ * String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
+ * <p>
+ * holder.mJudul.setText(judul);
+ * holder.mDesc.setText(desc);
+ * Log.d(TAG, "onDataChange: " + judul);
+ * Log.e("image", image);
+ * Glide.with(getActivity())
+ * .load(image)
+ * .override(150, 150)
+ * .into(holder.mImage);
+ * //                            }
+ * //                        }
+ * <p>
+ * //                        String judul = dataSnapshot.child("nama_komunitas").getValue().toString();
+ * //                        String desc = dataSnapshot.child("jenis_kegiatan").getValue().toString();
+ * //                        String image = dataSnapshot.child("gambar_komunitas").getValue().toString();
+ * //
+ * //                        holder.mJudul.setText(judul);
+ * //                        holder.mDesc.setText(desc);
+ * //                        Log.d(TAG, "onDataChange: " + judul);
+ * //                        Log.e("image", image);
+ * //                        Glide.with(getActivity())
+ * //                                .load(image)
+ * //                                .override(150, 150)
+ * //                                .into(holder.mImage);
+ * <p>
+ * <p>
+ * }
+ * @Override public void onCancelled(@NonNull DatabaseError databaseError) {
+ * <p>
+ * }
+ * });
+ * <p>
+ * holder.itemView.setOnClickListener(new View.OnClickListener() {
+ * @Override public void onClick(View view) {
+ * String communities_detail = getRef(position).getKey();
+ * <p>
+ * Intent detailIntent = new Intent(HomeFragment.this.getActivity(), DetailActivity.class);
+ * detailIntent.putExtra("communities_detail", communities_detail);
+ * startActivity(detailIntent);
+ * }
+ * });
+ * }
+ * @NonNull
+ * @Override public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+ * View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_communities, viewGroup, false);
+ * RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
+ * return viewHolder;
+ * }
+ * };
+ * <p>
+ * rcy_komunitas.setAdapter(adapter);
+ * adapter.startListening();
+ * <p>
+ * }
+ * <p>
+ * <p>
+ * //    private void getSearch(String query)
+ * //    {
+ * //        Query mQuery = FirebaseDatabase.getInstance().getReference().child("komunitas").orderByChild("nama_komunitas").equalTo(query);
+ * //        mQuery.keepSynced(true);
+ * //
+ * //        FirebaseRecyclerOptions<Communities> options =
+ * //                new FirebaseRecyclerOptions.Builder<Communities>()
+ * //                        .setQuery(teamQuery, Team.class)
+ * //                        .setLifecycleOwner(this)
+ * //                        .build();
+ * //
+ * //
+ * //        FirebaseRecyclerAdapter<Communities, ViewHolder>firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Communities, ViewHolder>() {
+ * //            @Override
+ * //            protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Communities model) {
+ * //
+ * //            }
+ * //
+ * //            @NonNull
+ * //            @Override
+ * //            public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+ * //                return null;
+ * //            }
+ * //        };
+ * //        rcy_komunitas.setAdapter(firebaseRecyclerAdapter);
+ * //    }
+ * <p>
+ * <p>
+ * public static class ViewHolder extends RecyclerView.ViewHolder {
+ * View mView;
+ * TextView mJudul, mDesc;
+ * ImageView mImage;
+ * <p>
+ * public ViewHolder(View itemView) {
+ * super(itemView);
+ * mView = itemView;
+ * <p>
+ * itemView.setOnClickListener(new View.OnClickListener() {
+ * @Override public void onClick(View view) {
+ * mClickListener.onItemClick(view, getAdapterPosition());
+ * }
+ * });
+ * }
+ * <p>
+ * public void setNamaDaerah(String namaDaerah) {
+ * mJudul = itemView.findViewById(R.id.modelJudul);
+ * mDesc = itemView.findViewById(R.id.modelDeskripsi);
+ * mImage = itemView.findViewById(R.id.modelGambar);
+ * }
+ * <p>
+ * private ViewHolder.ClickListener mClickListener;
+ * <p>
+ * public interface ClickListener {
+ * void onItemClick(View view, int position);
+ * }
+ * <p>
+ * public void setOnClickListener(ViewHolder.ClickListener clickListener) {
+ * mClickListener = clickListener;
+ * }
+ * }
+ * <p>
+ * public void search(View view) {
+ * SearchInput = InputText.getText().toString();
+ * onStart();
+ * };
+ */
