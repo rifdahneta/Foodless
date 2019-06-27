@@ -7,14 +7,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Fragment.ProfileKomunitasFragment">
 
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Profile komunitas"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/namaKomunitasProfile"
+        android:text="@string/nama_komunitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
         />
+        <TextView
+            android:id="@+id/alamatKomunitasProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/alamat"/>
+        <TextView
+            android:id="@+id/emailKomunitasProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/telponKomunitasProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_number"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/logoutProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:textSize="20sp"/>
+    </LinearLayout>
 
 </FrameLayout>

@@ -1,5 +1,6 @@
 package pnj.ac.id.foodless.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -72,34 +73,35 @@ public class    ProfileFragment extends Fragment {
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void getUserDetail() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference retriveUser = database.getReference("Users");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            retriveUser.child(Objects.requireNonNull(FirebaseAuth.getInstance()).getCurrentUser().getUid())
-                    .addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            User user = dataSnapshot.getValue(User.class);
+            retriveUser.child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+            retriveUser.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    User user = dataSnapshot.getValue(User.class);
 
-                            CurrentUser.full_name = user.getFullName();
-                            CurrentUser.email = user.getEmail();
-                            CurrentUser.address = user.getAddress();
-                            CurrentUser.phone = user.getPhone();
+                    CurrentUser.full_name = user.getFullName();
+                    CurrentUser.email = user.getEmail();
+                    CurrentUser.address = user.getAddress();
+                    CurrentUser.phone = user.getPhone();
 
-                            fullname.setText(CurrentUser.full_name);
-                            emailUser.setText(CurrentUser.email);
-                            addressUser.setText(CurrentUser.address);
-                            no_phoneUser.setText(CurrentUser.phone);
-                        }
+                    fullname.setText(CurrentUser.full_name);
+                    emailUser.setText(CurrentUser.email);
+                    addressUser.setText(CurrentUser.address);
+                    no_phoneUser.setText(CurrentUser.phone);
+                }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                            Log.w(TAG, "onCancelled: ", databaseError.toException());
-                        }
-                    });
+                    Log.w(TAG, "onCancelled: ", databaseError.toException());
+                }
+            });
         }
     }
 

@@ -5,6 +5,6 @@ public class CurrentUser {
     public static String address;
     public static String phone;
     public static String email;
-    public static String password;
+
 
 }
