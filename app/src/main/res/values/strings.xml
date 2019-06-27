@@ -59,4 +59,9 @@
 
     <string name="alamat">Alamat</string>
 
+    <string-array name="roleUser">
+        <item>Donatur</item>
+        <item>Komunitas</item>
+    </string-array>
+
 </resources>

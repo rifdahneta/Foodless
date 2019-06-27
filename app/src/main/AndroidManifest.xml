@@ -33,6 +33,9 @@
             android:name=".Activity.MainActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
+            android:name=".Activity.MainActivityKomunitas"
+            tools:ignore="InnerclassSeparator" />
+        <activity
             android:name=".Activity.Register"
             tools:ignore="InnerclassSeparator" />
         <activity

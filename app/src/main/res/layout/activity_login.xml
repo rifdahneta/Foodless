@@ -81,6 +81,30 @@
                 android:fontFamily="@font/questrial"/>
         </android.support.design.widget.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textSize="16sp"
+            android:textColor="@color/hitam"
+            android:fontFamily="@font/questrial"
+            android:layout_marginLeft="16dp"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:entries="@array/roleUser"
+            >
+        </Spinner>
+        </LinearLayout>
 
         <View
             android:id="@+id/View1"
