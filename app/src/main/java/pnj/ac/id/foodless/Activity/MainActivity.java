@@ -12,6 +12,7 @@ import android.widget.FrameLayout;
 import pnj.ac.id.foodless.Fragment.FoodfactFragment;
 import pnj.ac.id.foodless.Fragment.HistoryFragment;
 import pnj.ac.id.foodless.Fragment.HomeFragment;
+import pnj.ac.id.foodless.Fragment.NotificationFragment;
 import pnj.ac.id.foodless.Fragment.ProfileFragment;
 import pnj.ac.id.foodless.R;
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView mainNav;
     private FrameLayout mainFrame;
     private HomeFragment homefragment;
-    private FoodfactFragment foodfactfragment;
+    private NotificationFragment notificationfragment;
     private HistoryFragment historyfragment;
     private ProfileFragment profilefragment;
     private boolean navItemSelected= false;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         mainFrame = findViewById(R.id.main_frame);
 
         homefragment = new HomeFragment();
-        foodfactfragment = new FoodfactFragment();
+        notificationfragment = new NotificationFragment();
         historyfragment = new HistoryFragment();
         profilefragment = new ProfileFragment();
 
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.btnnotification:
-                        setFragment(foodfactfragment);
+                        setFragment(notificationfragment);
                         break;
 
                     case R.id.btnhistory:

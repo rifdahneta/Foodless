@@ -4,4 +4,9 @@
     <dimen name="small">9sp</dimen>
     <dimen name="average">10sp</dimen>
     <dimen name="medium">11sp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="standard_field_width">200dp</dimen>
 </resources>

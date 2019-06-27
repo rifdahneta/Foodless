@@ -26,8 +26,6 @@ import pnj.ac.id.foodless.CurrentUser;
 
 import pnj.ac.id.foodless.Model.User;
 
-import pnj.ac.id.foodless.DetailActivity;
-import pnj.ac.id.foodless.Model.FormModel;
 
 import pnj.ac.id.foodless.R;
 
