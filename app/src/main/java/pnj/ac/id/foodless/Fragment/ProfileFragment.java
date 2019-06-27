@@ -22,17 +22,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Objects;
 
 import pnj.ac.id.foodless.Activity.Login;
-import pnj.ac.id.foodless.Activity.MainApp;
 import pnj.ac.id.foodless.CurrentUser;
-import pnj.ac.id.foodless.Activity.DetailActivity;
-import pnj.ac.id.foodless.Model.FormModel;
 import pnj.ac.id.foodless.Model.User;
 import pnj.ac.id.foodless.R;
 
 import static android.support.constraint.Constraints.TAG;
 
 
-public class    ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     private TextView fullname, emailUser, addressUser, no_phoneUser, logout;
     private View ProfileView;
@@ -66,7 +63,6 @@ public class    ProfileFragment extends Fragment {
                 CurrentUser.email = null;
                 CurrentUser.address = null;
                 CurrentUser.phone = null;
-                MainApp.sharedPreferences.edit().clear().commit();
                 Intent intent = new Intent (ProfileFragment.this.getActivity(), Login.class);
                 startActivity(intent);
             }
@@ -83,7 +79,6 @@ public class    ProfileFragment extends Fragment {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             User user = dataSnapshot.getValue(User.class);
-
                             CurrentUser.full_name = user.getFullName();
                             CurrentUser.email = user.getEmail();
                             CurrentUser.address = user.getAddress();
