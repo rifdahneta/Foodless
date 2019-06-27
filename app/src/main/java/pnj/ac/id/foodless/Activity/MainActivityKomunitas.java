@@ -61,9 +61,9 @@ public class MainActivityKomunitas extends AppCompatActivity {
                         setFragment(HomeFragmentKomunitas);
                         break;
 
-                    case R.id.btnhistoryKomunitas:
-                        setFragment(HistoryKomunitasFragment);
-                        break;
+//                    case R.id.btnhistoryKomunitas:
+//                        setFragment(HistoryKomunitasFragment);
+//                        break;
 
                     case R.id.btnfprofileKomunitas:
                         setFragment(ProfileKomunitasFragment);

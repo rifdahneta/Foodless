@@ -23,6 +23,7 @@ import java.util.Objects;
 
 import pnj.ac.id.foodless.Activity.Form;
 import pnj.ac.id.foodless.Activity.Login;
+import pnj.ac.id.foodless.Activity.MainApp;
 import pnj.ac.id.foodless.CurrentUser;
 import pnj.ac.id.foodless.DetailActivity;
 import pnj.ac.id.foodless.Model.FormModel;
@@ -66,6 +67,7 @@ public class ProfileFragment extends Fragment {
                 CurrentUser.email = null;
                 CurrentUser.address = null;
                 CurrentUser.phone = null;
+                MainApp.sharedPreferences.edit().clear().commit();
                 Intent intent = new Intent (ProfileFragment.this.getActivity(), Login.class);
                 startActivity(intent);
             }

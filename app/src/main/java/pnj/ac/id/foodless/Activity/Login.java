@@ -78,6 +78,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     {
                         Toast.makeText(Login.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                     } else {
+                        MainApp.sharedPreferences.edit().putBoolean("isLogin",true).commit();
                         checkIfEmailVerified();
                     }
                 }
@@ -103,7 +104,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             //email verified, proceed to finish this activity
             finish();
             Toast.makeText(Login.this, "Successfully logged in", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(Login.this, MainActivityKomunitas.class);
+            Intent i = new Intent(Login.this, MainActivity.class);
             startActivity(i);
             finish();
         } else if (!user.isEmailVerified()) {
